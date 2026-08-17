@@ -3,20 +3,15 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Aseka & Dineth — Wedding Invitation</title>
 
 <style>
 *{box-sizing:border-box}
 
-html,body{
-  margin:0;
-  padding:0;
-  min-height:100%;
-}
-
 body{
+  margin:0;
   background:radial-gradient(circle at 50% 25%,#1d4a87,#0b2855 48%,#020b1c);
   color:white;
   font-family:Georgia,serif;
@@ -182,11 +177,11 @@ h1{
 @keyframes fade{
   from{
     opacity:0;
-    transform:translateY(18px);
+    transform:translateY(18px)
   }
   to{
     opacity:1;
-    transform:none;
+    transform:none
   }
 }
 
@@ -197,36 +192,28 @@ h1{
   box-shadow:0 28px 65px #000b;
 }
 
-/* IMPORTANT:
-   This keeps the invitation image exactly as it is.
-   The transparent link sits ON TOP of the existing
-   VIEW LOCATION button inside the picture.
-*/
-.invite-image{
-  position:relative;
-  width:100%;
-}
-
 .card img{
   width:100%;
   display:block;
   border-radius:9px;
 }
 
-/* CLICKABLE AREA OVER THE VIEW LOCATION BUTTON
-   inside invitation.png */
+/* CLICKABLE LOCATION AREA INSIDE THE INVITATION IMAGE */
+.invite-image{
+  position:relative;
+  width:100%;
+}
+
 .map-hotspot{
   position:absolute;
   left:18%;
-  top:84%;
-  width:31%;
-  height:5.5%;
+  top:68.8%;
+  width:39%;
+  height:5.2%;
   display:block;
-  z-index:20;
-  cursor:pointer;
   border-radius:30px;
-  background:transparent;
-  text-decoration:none;
+  cursor:pointer;
+  z-index:20;
 }
 
 .map-hotspot:focus{
@@ -242,9 +229,7 @@ h1{
   background:linear-gradient(145deg,#071f4b,#0b2d63);
   border:1px solid #c99a3b;
   padding:28px 20px 30px;
-  box-shadow:
-    0 18px 50px #0008,
-    inset 0 0 45px rgba(216,177,95,.06);
+  box-shadow:0 18px 50px #0008,inset 0 0 45px rgba(216,177,95,.06);
 }
 
 .deadline{
@@ -300,11 +285,6 @@ h1{
   font:21px Georgia;
   margin-bottom:34px;
   outline:none;
-}
-
-.input:focus{
-  border-color:#e4c16f;
-  box-shadow:0 0 0 3px rgba(228,193,111,.12);
 }
 
 .input::placeholder{
@@ -386,6 +366,15 @@ h1{
   line-height:1.6;
 }
 
+.success{
+  display:none;
+  text-align:center;
+  padding:20px 10px 5px;
+  color:#f7dfa0;
+  font-size:18px;
+  line-height:1.6;
+}
+
 .backbtn{
   display:block;
   margin:20px auto;
@@ -416,7 +405,6 @@ h1{
 }
 
 @media(max-width:520px){
-
   .attend{
     gap:12px;
   }
@@ -428,13 +416,6 @@ h1{
 
   .input{
     padding:0 24px;
-  }
-
-  .map-hotspot{
-    left:17%;
-    top:84%;
-    width:33%;
-    height:6%;
   }
 }
 </style>
@@ -484,9 +465,7 @@ h1{
 
   </div>
 
-  <div class="hint">
-    TAP / CLICK TO OPEN
-  </div>
+  <div class="hint">TAP / CLICK TO OPEN</div>
 
   <p>
     Friday • May 07, 2027 • 6:00 PM<br>
@@ -498,7 +477,7 @@ h1{
 
 <section class="inv" id="inv">
 
-  <!-- YOUR INVITATION IMAGE -->
+  <!-- INVITATION IMAGE -->
   <div class="card invite-card">
 
     <div class="invite-image">
@@ -508,11 +487,7 @@ h1{
         alt="Aseka and Dineth wedding invitation"
       >
 
-      <!--
-        THIS IS INVISIBLE.
-        IT SITS DIRECTLY ON TOP OF THE
-        VIEW LOCATION BUTTON IN THE IMAGE.
-      -->
+      <!-- ONLY THE VIEW LOCATION AREA INSIDE THE IMAGE IS CLICKABLE -->
       <a
         class="map-hotspot"
         href="https://www.google.com/maps/search/?api=1&query=Paradise%20Inn%20Bolgoda%2C%20QWP5%2B3C8%2C%2067%20Meegahawatte%20Rd%2C%20Piliyandala%2010300%2C%20Sri%20Lanka"
@@ -526,8 +501,7 @@ h1{
   </div>
 
 
-  <!-- RSVP SECTION -->
-
+  <!-- RSVP -->
   <div class="rsvp">
 
     <div class="deadline">
@@ -539,12 +513,10 @@ h1{
       Celebrate With You!
     </h2>
 
-    <div class="goldline">
-      ♥
-    </div>
+    <div class="goldline">♥</div>
 
 
-    <label class="label" for="name">
+    <label class="label">
       Your Name
     </label>
 
@@ -564,17 +536,17 @@ h1{
     <div class="attend">
 
       <button
-        type="button"
         class="choice"
         id="yes"
+        type="button"
       >
         JOYFULLY ACCEPT
       </button>
 
       <button
-        type="button"
         class="choice"
         id="no"
+        type="button"
       >
         REGRETTABLY<br>
         DECLINE
@@ -590,19 +562,22 @@ h1{
     <div class="counter">
 
       <button
-        type="button"
         id="minus"
+        type="button"
       >
         −
       </button>
 
-      <div class="count" id="count">
+      <div
+        class="count"
+        id="count"
+      >
         1
       </div>
 
       <button
-        type="button"
         id="plus"
+        type="button"
       >
         +
       </button>
@@ -611,24 +586,30 @@ h1{
 
 
     <button
-      type="button"
       class="submit"
       id="submit"
+      type="button"
     >
       RSVP NOW ♥
     </button>
 
-    <p class="note">
-      Your RSVP is submitted securely to our wedding RSVP list.
+    <p class="note" id="note">
+      Your RSVP is submitted directly to our wedding RSVP list.
     </p>
+
+    <div class="success" id="success">
+      ♥ Thank you! ♥<br>
+      Your RSVP has been received.<br>
+      We can't wait to celebrate with you!
+    </div>
 
   </div>
 
 
   <button
-    type="button"
     class="backbtn"
     id="close"
+    type="button"
   >
     ↩ Close invitation
   </button>
@@ -639,66 +620,50 @@ h1{
 
 
 <!--
-========================================================
-GOOGLE FORM SUBMISSION
-========================================================
+  HIDDEN GOOGLE FORM
 
-IMPORTANT:
-This is NOT the Apps Script method.
-
-This sends the RSVP directly to your actual Google Form.
-
-Your Google Form:
-1FAIpQLSeFx4IMOppN0a5KVuo6iAZTgzkfWtf88dx7V9bko78_1oE41A
-
-Your field IDs came from the working pre-filled URL you provided:
-Attendance = entry.877086558
-Name       = entry.1498135098
-Guests     = entry.2606285
-========================================================
+  IMPORTANT:
+  This is NOT the Apps Script.
+  It sends directly to your Google Form.
 -->
 
 <iframe
   name="googleFormTarget"
   id="googleFormTarget"
-  style="display:none;width:0;height:0;border:0;"
+  style="display:none;width:0;height:0;border:0"
 ></iframe>
 
 
 <form
-  id="googleRSVPForm"
+  id="googleRsvpForm"
   action="https://docs.google.com/forms/d/e/1FAIpQLSeFx4IMOppN0a5KVuo6iAZTgzkfWtf88dx7V9bko78_1oE41A/formResponse"
   method="POST"
   target="googleFormTarget"
-  style="display:none;"
+  style="display:none"
 >
 
   <input
     type="hidden"
-    name="entry.1498135098"
-    id="formName"
+    name="entry.877086558"
+    id="googleAttendance"
   >
 
   <input
     type="hidden"
-    name="entry.877086558"
-    id="formAttendance"
+    name="entry.1498135098"
+    id="googleName"
   >
 
   <input
     type="hidden"
     name="entry.2606285"
-    id="formGuests"
+    id="googleGuests"
   >
 
 </form>
 
 
 <script>
-
-/* =====================================================
-   BASIC ELEMENTS
-===================================================== */
 
 const env = document.getElementById("env");
 const intro = document.getElementById("intro");
@@ -716,37 +681,32 @@ const minus = document.getElementById("minus");
 
 const countDisplay = document.getElementById("count");
 
-const submitBtn = document.getElementById("submit");
+const submit = document.getElementById("submit");
 
 const nameInput = document.getElementById("name");
 
-const googleForm = document.getElementById("googleRSVPForm");
-
-const formName = document.getElementById("formName");
-const formAttendance = document.getElementById("formAttendance");
-const formGuests = document.getElementById("formGuests");
-
 const closeBtn = document.getElementById("close");
 
+const googleForm = document.getElementById("googleRsvpForm");
 
-/* =====================================================
-   RSVP VARIABLES
-===================================================== */
+const googleName = document.getElementById("googleName");
+const googleAttendance = document.getElementById("googleAttendance");
+const googleGuests = document.getElementById("googleGuests");
+
+const note = document.getElementById("note");
+const success = document.getElementById("success");
+
 
 let opened = false;
 let count = 1;
 let attendance = null;
 
 
-/* =====================================================
-   OPEN INVITATION
-===================================================== */
+/* OPEN INVITATION */
 
-function openInvitation(){
+function openIt(){
 
-  if(opened){
-    return;
-  }
+  if(opened) return;
 
   opened = true;
 
@@ -756,7 +716,6 @@ function openInvitation(){
 
     intro.style.display = "none";
     inv.style.display = "block";
-
     musicBtn.style.display = "block";
 
     window.scrollTo({
@@ -770,18 +729,16 @@ function openInvitation(){
 
 }
 
-wrap.addEventListener("click",openInvitation);
+wrap.addEventListener("click",openIt);
 
 
-/* =====================================================
-   MUSIC
-===================================================== */
+/* MUSIC */
 
 musicBtn.addEventListener("click",function(){
 
   if(music.paused){
 
-    music.play();
+    music.play().catch(function(){});
 
     musicBtn.textContent = "♫ Music On";
 
@@ -796,9 +753,7 @@ musicBtn.addEventListener("click",function(){
 });
 
 
-/* =====================================================
-   ATTENDANCE
-===================================================== */
+/* ATTEND YES */
 
 yes.addEventListener("click",function(){
 
@@ -816,6 +771,8 @@ yes.addEventListener("click",function(){
 });
 
 
+/* ATTEND NO */
+
 no.addEventListener("click",function(){
 
   attendance = false;
@@ -830,9 +787,7 @@ no.addEventListener("click",function(){
 });
 
 
-/* =====================================================
-   GUEST COUNTER
-===================================================== */
+/* PLUS */
 
 plus.addEventListener("click",function(){
 
@@ -849,6 +804,8 @@ plus.addEventListener("click",function(){
 });
 
 
+/* MINUS */
+
 minus.addEventListener("click",function(){
 
   if(attendance === false){
@@ -864,16 +821,19 @@ minus.addEventListener("click",function(){
 });
 
 
-/* =====================================================
-   RSVP SUBMISSION
-===================================================== */
+/*
+  RSVP SUBMISSION
 
-submitBtn.addEventListener("click",function(){
+  This sends directly to:
+  Google Forms → formResponse
+
+  It does NOT use Apps Script.
+*/
+
+submit.addEventListener("click",function(){
 
   const guestName = nameInput.value.trim();
 
-
-  /* NAME CHECK */
 
   if(!guestName){
 
@@ -886,8 +846,6 @@ submitBtn.addEventListener("click",function(){
   }
 
 
-  /* ATTENDANCE CHECK */
-
   if(attendance === null){
 
     alert("Please select whether you will attend.");
@@ -897,94 +855,66 @@ submitBtn.addEventListener("click",function(){
   }
 
 
-  /* MAKE SURE FORM EXISTS */
+  if(attendance === true && count < 1){
 
-  if(!googleForm){
-
-    alert("RSVP setup error. Please refresh the invitation.");
+    alert("Please select the number of guests.");
 
     return;
 
   }
 
 
-  /* =================================================
-     PUT ANSWERS INTO THE REAL GOOGLE FORM FIELDS
-  ================================================= */
+  /*
+    Put the answers into the exact Google Form fields.
+  */
 
-  formName.value = guestName;
+  googleName.value = guestName;
 
+  googleAttendance.value =
+    attendance
+      ? "Yes, I'll be there"
+      : "Sorry, can't make it";
 
-  if(attendance === true){
-
-    formAttendance.value = "Yes, I'll be there";
-
-    formGuests.value = String(count);
-
-  }else{
-
-    formAttendance.value = "Sorry, can't make it";
-
-    formGuests.value = "0";
-
-  }
+  googleGuests.value =
+    attendance
+      ? String(count)
+      : "0";
 
 
-  /* =================================================
-     PREVENT DOUBLE CLICK
-  ================================================= */
+  /*
+    Disable button while submitting.
+  */
 
-  submitBtn.disabled = true;
+  submit.disabled = true;
 
-  submitBtn.textContent = "SUBMITTING… ♥";
+  submit.textContent = "SUBMITTING… ♥";
 
 
-  /* =================================================
-     SEND DIRECTLY TO GOOGLE FORMS
-  ================================================= */
+  /*
+    Submit directly to Google Forms.
+  */
 
   googleForm.submit();
 
 
-  /* =================================================
-     SUCCESS MESSAGE
-  ================================================= */
+  /*
+    Google Forms receives the response in the background.
+  */
 
   setTimeout(function(){
 
-    submitBtn.disabled = false;
+    submit.style.display = "none";
 
-    submitBtn.textContent = "RSVP NOW ♥";
+    note.style.display = "none";
 
+    success.style.display = "block";
 
-    alert(
-      "Thank you, " +
-      guestName +
-      "! Your RSVP has been submitted successfully. 💙🤍"
-    );
-
-
-    /* Clear form after successful submission */
-
-    nameInput.value = "";
-
-    attendance = null;
-
-    yes.classList.remove("active");
-    no.classList.remove("active");
-
-    count = 1;
-
-    countDisplay.textContent = "1";
-
-  },1800);
+  },1500);
 
 });
 
 
-/* =====================================================
-   CLOSE INVITATION
-===================================================== */
+/* CLOSE INVITATION */
 
 closeBtn.addEventListener("click",function(){
 
@@ -1010,26 +940,27 @@ closeBtn.addEventListener("click",function(){
 });
 
 
-/* =====================================================
-   DECORATIVE PARTICLES
-===================================================== */
+/* DECORATIVE EFFECT */
 
 const canvas = document.getElementById("fx");
+
 const ctx = canvas.getContext("2d");
 
-let W;
-let H;
+let W,H;
 
 let particles = [];
+
 let stars = [];
 
 
 function resizeCanvas(){
 
   W = canvas.width = window.innerWidth;
+
   H = canvas.height = window.innerHeight;
 
 }
+
 
 resizeCanvas();
 
@@ -1041,8 +972,11 @@ for(let i=0;i<28;i++){
   particles.push({
 
     x:Math.random()*window.innerWidth,
+
     y:Math.random()*window.innerHeight,
+
     r:4+Math.random()*7,
+
     v:.3+Math.random()*.6
 
   });
@@ -1055,7 +989,9 @@ for(let i=0;i<40;i++){
   stars.push({
 
     x:Math.random()*window.innerWidth,
+
     y:Math.random()*window.innerHeight,
+
     p:Math.random()*6.28
 
   });
@@ -1063,7 +999,7 @@ for(let i=0;i<40;i++){
 }
 
 
-function animateEffects(){
+function animate(){
 
   ctx.clearRect(0,0,W,H);
 
@@ -1120,11 +1056,12 @@ function animateEffects(){
   }
 
 
-  requestAnimationFrame(animateEffects);
+  requestAnimationFrame(animate);
 
 }
 
-animateEffects();
+
+animate();
 
 </script>
 
