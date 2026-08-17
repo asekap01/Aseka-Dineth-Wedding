@@ -202,7 +202,7 @@ position:relative;
 width:100%
 }
 
-/* CLICKABLE LOCATION ON THE INVITATION */
+/* ONLY THE VIEW LOCATION INSIDE YOUR INVITATION IS CLICKABLE */
 .map-hotspot{
 position:absolute;
 left:18%;
@@ -219,32 +219,16 @@ outline:2px solid #e4c16f;
 outline-offset:2px
 }
 
-/* EXTRA LOCATION BUTTON */
-.location{
-text-align:center;
-margin:22px
-}
+/* RSVP BOX */
 
-.btn{
-display:inline-block;
-border:1px solid #d8b15f;
-border-radius:999px;
-padding:12px 22px;
-text-decoration:none;
-color:#fff;
-background:#08285d;
-font-size:13px;
-letter-spacing:1px
-}
-
-/* RSVP */
 .rsvp{
 margin:28px auto;
 max-width:650px;
 background:linear-gradient(145deg,#071f4b,#0b2d63);
 border:1px solid #c99a3b;
 padding:28px 20px 30px;
-box-shadow:0 18px 50px #0008,inset 0 0 45px rgba(216,177,95,.06)
+box-shadow:0 18px 50px #0008,
+inset 0 0 45px rgba(216,177,95,.06)
 }
 
 .deadline{
@@ -411,6 +395,7 @@ pointer-events:none
 }
 
 @media(max-width:520px){
+
 .attend{
 gap:12px
 }
@@ -423,6 +408,7 @@ letter-spacing:2px
 .input{
 padding:0 24px
 }
+
 }
 </style>
 </head>
@@ -435,17 +421,25 @@ padding:0 24px
 <source src="beautiful_in_white_instrumental.mp3" type="audio/mpeg">
 </audio>
 
-<button class="music" id="musicBtn">♫ Music On</button>
+<button class="music" id="musicBtn">
+♫ Music On
+</button>
 
 <div class="scene">
 
 <section class="intro" id="intro">
 
-<div class="monogram">A ♥ D</div>
+<div class="monogram">
+A ♥ D
+</div>
 
-<h1>Aseka & Dineth</h1>
+<h1>
+Aseka & Dineth
+</h1>
 
-<div class="sub">OUR WEDDING INVITATION</div>
+<div class="sub">
+OUR WEDDING INVITATION
+</div>
 
 <div class="envelope-wrap" id="wrap">
 
@@ -468,6 +462,7 @@ A ♥ D
 </div>
 
 </div>
+
 </div>
 
 <div class="hint">
@@ -493,7 +488,12 @@ src="invitation.png"
 alt="Aseka and Dineth wedding invitation"
 >
 
-<!-- CLICKABLE AREA OVER VIEW LOCATION -->
+<!--
+This invisible link sits directly over the
+VIEW LOCATION text already printed inside
+your invitation image.
+-->
+
 <a
 class="map-hotspot"
 href="https://www.google.com/maps/search/?api=1&query=Paradise+Inn+Bolgoda%2C+QWP5%2B3C8%2C+67+Meegahawatte+Rd%2C+Piliyandala+10300%2C+Sri+Lanka"
@@ -507,24 +507,7 @@ aria-label="View location on Google Maps">
 </div>
 
 
-<!-- CLEAR GOOGLE MAPS BUTTON -->
-
-<div class="location">
-
-<a
-class="btn"
-href="https://www.google.com/maps/search/?api=1&query=Paradise+Inn+Bolgoda%2C+QWP5%2B3C8%2C+67+Meegahawatte+Rd%2C+Piliyandala+10300%2C+Sri+Lanka"
-target="_blank"
-rel="noopener">
-
-📍 VIEW LOCATION
-
-</a>
-
-</div>
-
-
-<!-- RSVP BOX -->
+<!-- RSVP -->
 
 <div class="rsvp">
 
@@ -636,10 +619,11 @@ type="button">
 
 
 <!--
-THIS IS THE IMPORTANT PART.
+HIDDEN GOOGLE FORM
 
-The guest does NOT see this Google Form.
-The response goes directly to your existing Google Form.
+Guests do NOT see this form.
+Their answers are sent directly to
+your existing Google Form.
 -->
 
 <iframe
@@ -657,18 +641,21 @@ target="googleFormTarget"
 style="display:none"
 >
 
+<!-- NAME -->
 <input
 type="hidden"
 name="entry.1498135098"
 id="rsvpName"
 >
 
+<!-- ATTENDANCE -->
 <input
 type="hidden"
 name="entry.877086558"
 id="rsvpAttendance"
 >
 
+<!-- NUMBER OF GUESTS -->
 <input
 type="hidden"
 name="entry.2606285"
@@ -748,7 +735,7 @@ function openIt(){
 
 if(opened)return;
 
-opened=true;
+opened = true;
 
 env.classList.add('open');
 
@@ -771,12 +758,12 @@ music.play().catch(()=>{});
 
 }
 
-wrap.onclick=openIt;
+wrap.onclick = openIt;
 
 
 /* MUSIC */
 
-mb.onclick=()=>{
+mb.onclick = ()=>{
 
 if(music.paused){
 
@@ -797,19 +784,19 @@ mb.textContent='♫ Music Off';
 
 /* YES */
 
-yes.onclick=()=>{
+yes.onclick = ()=>{
 
-att=true;
+att = true;
 
 yes.classList.add('active');
 
 no.classList.remove('active');
 
-if(count===0){
+if(count === 0){
 
-count=1;
+count = 1;
 
-countDisplay.textContent=1;
+countDisplay.textContent = 1;
 
 }
 
@@ -818,54 +805,54 @@ countDisplay.textContent=1;
 
 /* NO */
 
-no.onclick=()=>{
+no.onclick = ()=>{
 
-att=false;
+att = false;
 
 no.classList.add('active');
 
 yes.classList.remove('active');
 
-count=0;
+count = 0;
 
-countDisplay.textContent=0;
+countDisplay.textContent = 0;
 
 };
 
 
 /* PLUS */
 
-plus.onclick=()=>{
+plus.onclick = ()=>{
 
-if(att!==false && count<20){
+if(att !== false && count < 20){
 
 count++;
 
 }
 
-countDisplay.textContent=count;
+countDisplay.textContent = count;
 
 };
 
 
 /* MINUS */
 
-minus.onclick=()=>{
+minus.onclick = ()=>{
 
-if(count>0){
+if(count > 0){
 
 count--;
 
 }
 
-countDisplay.textContent=count;
+countDisplay.textContent = count;
 
 };
 
 
-/* RSVP SUBMISSION */
+/* RSVP */
 
-submit.onclick=()=>{
+submit.onclick = ()=>{
 
 const guestName =
 nameInput.value.trim();
@@ -882,7 +869,7 @@ return;
 }
 
 
-if(att===null){
+if(att === null){
 
 alert(
 'Please select whether you will attend.'
@@ -893,7 +880,7 @@ return;
 }
 
 
-if(att && count<1){
+if(att && count < 1){
 
 alert(
 'Please select at least 1 guest.'
@@ -905,8 +892,8 @@ return;
 
 
 /*
-Put the guest information
-into the hidden Google Form fields.
+Put the answers into the
+hidden Google Form.
 */
 
 rsvpName.value =
@@ -923,59 +910,58 @@ att
 : "0";
 
 
-submit.disabled=true;
+submit.disabled = true;
 
 submit.textContent =
 'SUBMITTING… ♥';
 
 
 /*
-SEND TO GOOGLE FORM
+Send directly to Google Forms.
 */
 
 rsvpForm.submit();
 
 
 /*
-Show confirmation after
-the hidden submission.
+Show the confirmation message.
 */
 
 setTimeout(()=>{
 
-submit.disabled=false;
+submit.disabled = false;
 
-submit.textContent=
+submit.textContent =
 'RSVP NOW ♥';
 
 alert(
 'Thank you! Your RSVP has been submitted. 💙🤍'
 );
 
-nameInput.value='';
+nameInput.value = '';
 
 },1500);
 
 };
 
 
-/* CLOSE INVITATION */
+/* CLOSE */
 
-close.onclick=()=>{
+close.onclick = ()=>{
 
-opened=false;
+opened = false;
 
-inv.style.display='none';
+inv.style.display = 'none';
 
-intro.style.display='flex';
+intro.style.display = 'flex';
 
 env.classList.remove('open');
 
 music.pause();
 
-music.currentTime=0;
+music.currentTime = 0;
 
-mb.style.display='none';
+mb.style.display = 'none';
 
 scrollTo({
 top:0,
@@ -995,11 +981,12 @@ c.getContext('2d');
 
 let W,H,p=[],s=[];
 
+
 function rs(){
 
-W=c.width=innerWidth;
+W = c.width = innerWidth;
 
-H=c.height=innerHeight;
+H = c.height = innerHeight;
 
 }
 
@@ -1057,12 +1044,12 @@ if(opened){
 
 p.forEach(a=>{
 
-a.y+=a.v;
+a.y += a.v;
 
-if(a.y>H)
-a.y=-10;
+if(a.y > H)
+a.y = -10;
 
-x.fillStyle=
+x.fillStyle =
 'rgba(55,108,191,.55)';
 
 x.beginPath();
@@ -1084,9 +1071,9 @@ x.fill();
 
 s.forEach(a=>{
 
-a.p+=.015;
+a.p += .015;
 
-x.fillStyle=
+x.fillStyle =
 'rgba(242,204,111,.35)';
 
 x.beginPath();
