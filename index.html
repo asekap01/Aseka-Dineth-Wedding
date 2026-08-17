@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -7,944 +7,1261 @@
 <title>Aseka & Dineth — Wedding Invitation</title>
 
 <style>
-*{
-  box-sizing:border-box
+* {
+  box-sizing: border-box;
 }
 
-body{
-  margin:0;
-  background:radial-gradient(circle at 50% 25%,#1d4a87,#0b2855 48%,#020b1c);
-  color:white;
-  font-family:Georgia,serif
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
 }
 
-.scene{
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  padding:20px
+body {
+  background:
+    radial-gradient(circle at 50% 25%, #1d4a87, #0b2855 48%, #020b1c);
+  color: white;
+  font-family: Georgia, serif;
 }
 
-.intro{
-  width:min(100%,760px);
-  min-height:95vh;
-  text-align:center;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center
+.scene {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 }
 
-.monogram{
-  color:#e8c873;
-  letter-spacing:8px;
-  font-size:23px
+.intro {
+  width: min(100%, 760px);
+  min-height: 95vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-h1{
-  font-size:clamp(38px,8vw,64px);
-  font-weight:400;
-  font-style:italic;
-  margin:5px
+.monogram {
+  color: #e8c873;
+  letter-spacing: 8px;
+  font-size: 23px;
 }
 
-.sub{
-  font-size:12px;
-  letter-spacing:4px;
-  color:#eee2c8
+h1 {
+  font-size: clamp(38px, 8vw, 64px);
+  font-weight: 400;
+  font-style: italic;
+  margin: 5px;
 }
 
-.envelope-wrap{
-  width:min(92vw,570px);
-  height:min(58vw,345px);
-  min-height:240px;
-  margin:42px auto 16px;
-  perspective:1800px;
-  cursor:pointer
+.sub {
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: #eee2c8;
 }
 
-.envelope{
-  position:relative;
-  width:100%;
-  height:100%;
-  transform-style:preserve-3d;
-  filter:drop-shadow(0 32px 42px #0009);
-  transition:transform 1.4s
+.envelope-wrap {
+  width: min(92vw, 570px);
+  height: min(58vw, 345px);
+  min-height: 240px;
+  margin: 42px auto 16px;
+  perspective: 1800px;
+  cursor: pointer;
 }
 
-.back{
-  position:absolute;
-  inset:0;
-  border-radius:14px;
-  background:linear-gradient(145deg,#fbf5ea,#d6c9b5);
-  border:2px solid #d4aa58
+.envelope {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 32px 42px #0009);
+  transition: transform 1.4s;
 }
 
-.paper{
-  position:absolute;
-  left:7%;
-  right:7%;
-  bottom:3%;
-  height:88%;
-  background:#f5efe6;
-  z-index:2;
-  border-radius:8px;
-  transform:translateY(62%);
-  transition:transform 2.2s cubic-bezier(.16,.82,.2,1);
-  display:grid;
-  place-items:center;
-  color:#173a70
+.back {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #fbf5ea, #d6c9b5);
+  border: 2px solid #d4aa58;
 }
 
-.flap{
-  position:absolute;
-  inset:0 0 auto;
-  height:70%;
-  background:linear-gradient(145deg,#204f91,#082654);
-  clip-path:polygon(0 0,100% 0,50% 100%);
-  transform-origin:top;
-  transition:transform 2s;
-  z-index:7
+.paper {
+  position: absolute;
+  left: 7%;
+  right: 7%;
+  bottom: 3%;
+  height: 88%;
+  background: #f5efe6;
+  z-index: 2;
+  border-radius: 8px;
+  transform: translateY(62%);
+  transition: transform 2.2s cubic-bezier(.16,.82,.2,1);
+  display: grid;
+  place-items: center;
+  color: #173a70;
+}
+
+.flap {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 70%;
+  background: linear-gradient(145deg, #204f91, #082654);
+  clip-path: polygon(0 0,100% 0,50% 100%);
+  transform-origin: top;
+  transition: transform 2s;
+  z-index: 7;
 }
 
 .left,
-.right{
-  position:absolute;
-  bottom:0;
-  width:53%;
-  height:73%;
-  background:linear-gradient(145deg,#f4ede2,#e1d6c4);
-  z-index:6
+.right {
+  position: absolute;
+  bottom: 0;
+  width: 53%;
+  height: 73%;
+  background: linear-gradient(145deg, #f4ede2, #e1d6c4);
+  z-index: 6;
 }
 
-.left{
-  left:0;
-  clip-path:polygon(0 0,100% 100%,0 100%)
+.left {
+  left: 0;
+  clip-path: polygon(0 0,100% 100%,0 100%);
 }
 
-.right{
-  right:0;
-  clip-path:polygon(100% 0,100% 100%,0 100%)
+.right {
+  right: 0;
+  clip-path: polygon(100% 0,100% 100%,0 100%);
 }
 
-.seal{
-  position:absolute;
-  z-index:10;
-  left:50%;
-  top:54%;
-  transform:translate(-50%,-50%);
-  width:86px;
-  height:86px;
-  border-radius:50%;
-  background:radial-gradient(circle,#f7dfa0,#a87322 75%);
-  border:3px solid #fff5d9;
-  color:#122c59;
-  display:grid;
-  place-items:center;
-  font-weight:bold;
-  transition:1s
+.seal {
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+  top: 54%;
+  transform: translate(-50%,-50%);
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: radial-gradient(circle,#f7dfa0,#a87322 75%);
+  border: 3px solid #fff5d9;
+  color: #122c59;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+  transition: 1s;
 }
 
-.envelope.open{
-  transform:translateY(-12px) scale(1.01)
+.envelope.open {
+  transform: translateY(-12px) scale(1.01);
 }
 
-.envelope.open .flap{
-  transform:rotateX(180deg);
-  z-index:1
+.envelope.open .flap {
+  transform: rotateX(180deg);
+  z-index: 1;
 }
 
-.envelope.open .paper{
-  transform:translateY(-17%)
+.envelope.open .paper {
+  transform: translateY(-17%);
 }
 
-.envelope.open .seal{
-  opacity:0;
-  transform:translate(-50%,-50%) scale(.55)
+.envelope.open .seal {
+  opacity: 0;
+  transform: translate(-50%,-50%) scale(.55);
 }
 
-.hint{
-  color:#f1ddb0;
-  font-size:13px;
-  letter-spacing:2px
+.hint {
+  color: #f1ddb0;
+  font-size: 13px;
+  letter-spacing: 2px;
 }
 
-.inv{
-  display:none;
-  width:min(100%,760px);
-  animation:fade 1.8s ease;
-  padding-bottom:40px
+.inv {
+  display: none;
+  width: min(100%, 760px);
+  animation: fade 1.8s ease;
+  padding-bottom: 40px;
 }
 
-@keyframes fade{
-  from{
-    opacity:0;
-    transform:translateY(18px)
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
   }
-  to{
-    opacity:1;
-    transform:none
+
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
 
-.card{
-  background:#fff;
-  padding:10px;
-  border-radius:15px;
-  box-shadow:0 28px 65px #000b
+.card {
+  background: #fff;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 28px 65px #000b;
 }
 
-.invite-image{
-  position:relative;
-  width:100%
+/* =====================================================
+   INVITATION IMAGE
+   ===================================================== */
+
+.invite-image {
+  position: relative;
+  width: 100%;
 }
 
-.card img{
-  width:100%;
-  display:block;
-  border-radius:9px
+.invite-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 9px;
 }
 
-/* CLICKABLE LOCATION AREA INSIDE THE INVITATION */
+/*
+   THIS IS THE CLICKABLE LOCATION AREA.
 
-.map-hotspot{
-  position:absolute;
-  left:17%;
-  top:68%;
-  width:66%;
-  height:8%;
-  display:block;
-  border-radius:30px;
-  cursor:pointer;
-  z-index:20
+   It sits directly over the "View Location"
+   area already printed inside invitation.png.
+*/
+
+.map-hotspot {
+  position: absolute;
+
+  /* location of the existing View Location area */
+  left: 14%;
+  top: 66%;
+  width: 72%;
+  height: 10%;
+
+  display: block;
+  z-index: 50;
+
+  cursor: pointer;
+
+  background: transparent;
+  border: 0;
+  border-radius: 40px;
+
+  text-decoration: none;
 }
 
-.map-hotspot:focus{
-  outline:2px solid #e4c16f;
-  outline-offset:2px
+.map-hotspot:hover {
+  background: rgba(255,255,255,0.04);
 }
 
-/* RSVP */
+.map-hotspot:focus {
+  outline: 2px solid #e4c16f;
+  outline-offset: 3px;
+}
 
-.rsvp{
-  margin:28px auto;
-  max-width:650px;
-  background:linear-gradient(145deg,#071f4b,#0b2d63);
-  border:1px solid #c99a3b;
-  padding:28px 20px 30px;
+/* =====================================================
+   RSVP
+   ===================================================== */
+
+.rsvp {
+  margin: 28px auto;
+  max-width: 650px;
+
+  background:
+    linear-gradient(145deg,#071f4b,#0b2d63);
+
+  border: 1px solid #c99a3b;
+
+  padding: 28px 20px 30px;
+
   box-shadow:
     0 18px 50px #0008,
-    inset 0 0 45px rgba(216,177,95,.06)
+    inset 0 0 45px rgba(216,177,95,.06);
 }
 
-.deadline{
-  text-align:center;
-  color:#d8b15f;
-  letter-spacing:5px;
-  font-size:13px
+.deadline {
+  text-align: center;
+  color: #d8b15f;
+  letter-spacing: 5px;
+  font-size: 13px;
 }
 
-.rsvp h2{
-  text-align:center;
-  font-weight:400;
-  font-size:clamp(36px,7vw,56px);
-  line-height:1.25;
-  margin:35px 0;
-  color:#fffaf0
+.rsvp h2 {
+  text-align: center;
+  font-weight: 400;
+  font-size: clamp(36px,7vw,56px);
+  line-height: 1.25;
+  margin: 35px 0;
+  color: #fffaf0;
 }
 
-.goldline{
-  display:flex;
-  align-items:center;
-  gap:18px;
-  color:#d69a24;
-  font-size:25px;
-  margin-bottom:35px
+.goldline {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: #d69a24;
+  font-size: 25px;
+  margin-bottom: 35px;
 }
 
 .goldline:before,
-.goldline:after{
-  content:"";
-  height:1px;
-  background:#8e5d18;
-  flex:1
+.goldline:after {
+  content: "";
+  height: 1px;
+  background: #8e5d18;
+  flex: 1;
 }
 
-.label{
-  display:block;
-  color:#d69a24;
-  letter-spacing:5px;
-  font-size:14px;
-  text-transform:uppercase;
-  margin:0 0 14px
+.label {
+  display: block;
+  color: #d69a24;
+  letter-spacing: 5px;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin: 0 0 14px;
 }
 
-.input{
-  width:100%;
-  height:72px;
-  border:2px solid #b78a35;
-  border-radius:26px;
-  background:rgba(255,250,240,.08);
-  color:#fff;
-  padding:0 38px;
-  font:21px Georgia;
-  margin-bottom:34px;
-  outline:none
+.input {
+  width: 100%;
+  height: 72px;
+
+  border: 2px solid #b78a35;
+  border-radius: 26px;
+
+  background: rgba(255,250,240,.08);
+
+  color: #fff;
+
+  padding: 0 38px;
+
+  font: 21px Georgia;
+
+  margin-bottom: 34px;
+
+  outline: none;
 }
 
-.input::placeholder{
-  color:#b7b3ac
+.input:focus {
+  border-color: #e5c46c;
 }
 
-.attend{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:22px;
-  margin-bottom:34px
+.input::placeholder {
+  color: #b7b3ac;
 }
 
-.choice{
-  min-height:110px;
-  border:2px solid #b78a35;
-  border-radius:28px;
-  background:rgba(255,250,240,.07);
-  color:#eee;
-  letter-spacing:3px;
-  font-size:14px;
-  padding:20px;
-  cursor:pointer
+.attend {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-bottom: 34px;
 }
 
-.choice.active{
-  background:#b78a35;
-  color:#fffaf0
+.choice {
+  min-height: 110px;
+
+  border: 2px solid #b78a35;
+  border-radius: 28px;
+
+  background: rgba(255,250,240,.07);
+
+  color: #eee;
+
+  letter-spacing: 3px;
+  font-size: 14px;
+
+  padding: 20px;
+
+  cursor: pointer;
+
+  font-family: Georgia, serif;
 }
 
-.counter{
-  height:108px;
-  border:2px solid #b78a35;
-  border-radius:26px;
-  background:#3a2a21;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 18px;
-  margin-bottom:32px
+.choice:hover {
+  background: rgba(183,138,53,.25);
 }
 
-.counter button{
-  width:72px;
-  height:72px;
-  border:0;
-  border-radius:22px;
-  background:#12396f;
-  color:#e3c36f;
-  font-size:38px;
-  cursor:pointer
+.choice.active {
+  background: #b78a35;
+  color: #fffaf0;
 }
 
-.count{
-  font-size:44px
+.counter {
+  height: 108px;
+
+  border: 2px solid #b78a35;
+  border-radius: 26px;
+
+  background: #3a2a21;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 18px;
+
+  margin-bottom: 32px;
 }
 
-.submit{
-  width:100%;
-  height:68px;
-  border:0;
-  border-radius:28px;
-  background:linear-gradient(135deg,#d8b15f,#b9852e);
-  color:#071c3d;
-  font:20px Georgia;
-  letter-spacing:4px;
-  cursor:pointer
+.counter button {
+  width: 72px;
+  height: 72px;
+
+  border: 0;
+  border-radius: 22px;
+
+  background: #12396f;
+  color: #e3c36f;
+
+  font-size: 38px;
+
+  cursor: pointer;
 }
 
-.submit:disabled{
-  opacity:.7;
-  cursor:wait
+.counter button:hover {
+  background: #1b4c8f;
 }
 
-.note{
-  text-align:center;
-  color:#d8d4ca;
-  font-size:13px;
-  line-height:1.6
+.count {
+  font-size: 44px;
 }
 
-.backbtn{
-  display:block;
-  margin:20px auto;
-  border:0;
-  background:none;
-  color:#e8cf96;
-  text-decoration:underline;
-  cursor:pointer
+.submit {
+  width: 100%;
+  height: 68px;
+
+  border: 0;
+  border-radius: 28px;
+
+  background:
+    linear-gradient(135deg,#d8b15f,#b9852e);
+
+  color: #071c3d;
+
+  font: 20px Georgia;
+
+  letter-spacing: 4px;
+
+  cursor: pointer;
 }
 
-.music{
-  display:none;
-  position:fixed;
-  right:15px;
-  bottom:15px;
-  z-index:30;
-  border:1px solid #d8b15f;
-  background:#08285d;
-  color:white;
-  border-radius:999px;
-  padding:10px 15px
+.submit:hover {
+  transform: translateY(-1px);
 }
 
-#fx{
-  position:fixed;
-  inset:0;
-  pointer-events:none
+.submit:disabled {
+  opacity: .7;
+  cursor: wait;
 }
 
-@media(max-width:520px){
+.note {
+  text-align: center;
+  color: #d8d4ca;
+  font-size: 13px;
+  line-height: 1.6;
+}
 
-  .attend{
-    gap:12px
+.backbtn {
+  display: block;
+  margin: 20px auto;
+
+  border: 0;
+  background: none;
+
+  color: #e8cf96;
+
+  text-decoration: underline;
+
+  cursor: pointer;
+
+  font-family: Georgia,serif;
+}
+
+.music {
+  display: none;
+
+  position: fixed;
+
+  right: 15px;
+  bottom: 15px;
+
+  z-index: 100;
+
+  border: 1px solid #d8b15f;
+
+  background: #08285d;
+  color: white;
+
+  border-radius: 999px;
+
+  padding: 10px 15px;
+}
+
+#fx {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media(max-width:520px) {
+
+  .attend {
+    gap: 12px;
   }
 
-  .choice{
-    font-size:12px;
-    letter-spacing:2px
+  .choice {
+    font-size: 12px;
+    letter-spacing: 2px;
   }
 
-  .input{
-    padding:0 24px
+  .input {
+    padding: 0 24px;
   }
 
-  .map-hotspot{
-    left:15%;
-    width:70%;
-    top:67%;
-    height:10%
+  .map-hotspot {
+    left: 10%;
+    top: 64%;
+    width: 80%;
+    height: 13%;
   }
 }
 </style>
 </head>
 
+
 <body>
 
 <canvas id="fx"></canvas>
 
+
 <audio id="music" loop>
-  <source src="beautiful_in_white_instrumental.mp3" type="audio/mpeg">
+  <source
+    src="beautiful_in_white_instrumental.mp3"
+    type="audio/mpeg"
+  >
 </audio>
 
-<button class="music" id="musicBtn">
+
+<button
+  class="music"
+  id="musicBtn"
+  type="button"
+>
   ♫ Music On
 </button>
 
 
 <div class="scene">
 
-<section class="intro" id="intro">
 
-  <div class="monogram">
-    A ♥ D
-  </div>
+  <!-- =================================================
+       OPENING ENVELOPE
+       ================================================= -->
 
-  <h1>
-    Aseka & Dineth
-  </h1>
+  <section
+    class="intro"
+    id="intro"
+  >
 
-  <div class="sub">
-    OUR WEDDING INVITATION
-  </div>
-
-  <div class="envelope-wrap" id="wrap">
-
-    <div class="envelope" id="env">
-
-      <div class="back"></div>
-
-      <div class="paper">
-        WITH LOVE • ASEKA & DINETH
-      </div>
-
-      <div class="flap"></div>
-
-      <div class="left"></div>
-
-      <div class="right"></div>
-
-      <div class="seal">
-        A ♥ D
-      </div>
-
+    <div class="monogram">
+      A ♥ D
     </div>
 
-  </div>
+    <h1>
+      Aseka & Dineth
+    </h1>
 
-  <div class="hint">
-    TAP / CLICK TO OPEN
-  </div>
-
-  <p>
-    Friday • May 07, 2027 • 6:00 PM<br>
-    Paradise Inn Bolgoda
-  </p>
-
-</section>
-
-
-<section class="inv" id="inv">
-
-  <div class="card invite-card">
-
-    <div class="invite-image">
-
-      <img
-        src="invitation.png"
-        alt="Aseka and Dineth wedding invitation"
-      >
-
-      <!--
-      CLICKING THIS AREA OPENS GOOGLE MAPS
-      -->
-
-      <a
-        class="map-hotspot"
-        href="https://www.google.com/maps/search/?api=1&query=Paradise+Inn+Bolgoda%2C+QWP5%2B3C8%2C+67+Meegahawatte+Rd%2C+Piliyandala+10300%2C+Sri+Lanka"
-        target="_blank"
-        rel="noopener"
-        aria-label="View Paradise Inn Bolgoda on Google Maps"
-      ></a>
-
-    </div>
-
-  </div>
-
-
-  <!-- RSVP SECTION -->
-
-  <div class="rsvp">
-
-    <div class="deadline">
-      KINDLY RSVP BY AUGUST 10, 2026
-    </div>
-
-    <h2>
-      We Can't Wait To<br>
-      Celebrate With You!
-    </h2>
-
-    <div class="goldline">
-      ♥
+    <div class="sub">
+      OUR WEDDING INVITATION
     </div>
 
 
-    <label class="label">
-      Your Name
-    </label>
-
-    <input
-      class="input"
-      id="name"
-      type="text"
-      placeholder="Your full name"
-      autocomplete="name"
+    <div
+      class="envelope-wrap"
+      id="wrap"
     >
 
-
-    <div class="label">
-      Will You Attend?
-    </div>
-
-    <div class="attend">
-
-      <button
-        class="choice"
-        id="yes"
-        type="button"
-      >
-        JOYFULLY ACCEPT
-      </button>
-
-      <button
-        class="choice"
-        id="no"
-        type="button"
-      >
-        REGRETTABLY<br>
-        DECLINE
-      </button>
-
-    </div>
-
-
-    <div class="label">
-      Number Of Guests
-    </div>
-
-    <div class="counter">
-
-      <button
-        id="minus"
-        type="button"
-      >
-        −
-      </button>
-
       <div
-        class="count"
-        id="count"
+        class="envelope"
+        id="env"
       >
-        1
+
+        <div class="back"></div>
+
+        <div class="paper">
+          WITH LOVE • ASEKA & DINETH
+        </div>
+
+        <div class="flap"></div>
+
+        <div class="left"></div>
+
+        <div class="right"></div>
+
+        <div class="seal">
+          A ♥ D
+        </div>
+
       </div>
 
+    </div>
+
+
+    <div class="hint">
+      TAP / CLICK TO OPEN
+    </div>
+
+
+    <p>
+      Friday • May 07, 2027 • 6:00 PM<br>
+      Paradise Inn Bolgoda
+    </p>
+
+  </section>
+
+
+
+  <!-- =================================================
+       INVITATION
+       ================================================= -->
+
+  <section
+    class="inv"
+    id="inv"
+  >
+
+
+    <div class="card invite-card">
+
+
+      <div class="invite-image">
+
+
+        <img
+          src="invitation.png"
+          alt="Aseka and Dineth Wedding Invitation"
+        >
+
+
+        <!--
+          THE LOCATION BUTTON IS INSIDE THE IMAGE.
+
+          Clicking the existing View Location area
+          opens Google Maps.
+        -->
+
+        <a
+          class="map-hotspot"
+          href="https://www.google.com/maps/search/?api=1&query=Paradise+Inn+Bolgoda%2C+QWP5%2B3C8%2C+67+Meegahawatte+Rd%2C+Piliyandala+10300%2C+Sri+Lanka"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open Paradise Inn Bolgoda in Google Maps"
+        ></a>
+
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         RSVP SECTION
+         ================================================= -->
+
+    <div class="rsvp">
+
+
+      <div class="deadline">
+        KINDLY RSVP BY AUGUST 10, 2026
+      </div>
+
+
+      <h2>
+        We Can't Wait To<br>
+        Celebrate With You!
+      </h2>
+
+
+      <div class="goldline">
+        ♥
+      </div>
+
+
+      <label
+        class="label"
+        for="name"
+      >
+        Your Name
+      </label>
+
+
+      <input
+        class="input"
+        id="name"
+        type="text"
+        placeholder="Your full name"
+        autocomplete="name"
+      >
+
+
+      <div class="label">
+        Will You Attend?
+      </div>
+
+
+      <div class="attend">
+
+
+        <button
+          class="choice"
+          id="yes"
+          type="button"
+        >
+          JOYFULLY ACCEPT
+        </button>
+
+
+        <button
+          class="choice"
+          id="no"
+          type="button"
+        >
+          REGRETTABLY<br>
+          DECLINE
+        </button>
+
+
+      </div>
+
+
+      <div class="label">
+        Number Of Guests
+      </div>
+
+
+      <div class="counter">
+
+
+        <button
+          id="minus"
+          type="button"
+        >
+          −
+        </button>
+
+
+        <div
+          class="count"
+          id="count"
+        >
+          1
+        </div>
+
+
+        <button
+          id="plus"
+          type="button"
+        >
+          +
+        </button>
+
+
+      </div>
+
+
       <button
-        id="plus"
+        class="submit"
+        id="submit"
         type="button"
       >
-        +
+        RSVP NOW ♥
       </button>
+
+
+      <p class="note">
+        Your RSVP is submitted directly to our wedding RSVP list.
+      </p>
+
 
     </div>
 
 
     <button
-      class="submit"
-      id="submit"
+      class="backbtn"
+      id="close"
       type="button"
     >
-      RSVP NOW ♥
+      ↩ Close invitation
     </button>
 
-    <p class="note">
-      Your RSVP will be sent securely to our wedding RSVP list.
-    </p>
 
-  </div>
-
-
-  <button
-    class="backbtn"
-    id="close"
-    type="button"
-  >
-    ↩ Close invitation
-  </button>
-
-</section>
+  </section>
 
 </div>
 
 
+
 <!-- =====================================================
-     HIDDEN GOOGLE FORM
+     HIDDEN GOOGLE FORM SUBMISSION
+     =====================================================
+
+     IMPORTANT:
+
+     This submits directly to your Google Form.
+
+     It does NOT open the Google Form for the guest.
+
+     The three entry IDs are the ones from the
+     pre-filled Google Form URL you provided.
      ===================================================== -->
 
+
 <iframe
-  name="googleFormTarget"
-  id="googleFormTarget"
-  style="display:none;width:0;height:0;border:0"
+  name="rsvpTarget"
+  id="rsvpTarget"
+  style="
+    display:none;
+    width:0;
+    height:0;
+    border:0;
+  "
 ></iframe>
 
 
 <form
-  id="googleRSVP"
+  id="rsvpForm"
+
   action="https://docs.google.com/forms/d/e/1FAIpQLSeFx4IMOppN0a5KVuo6iAZTgzkfWtf88dx7V9bko78_1oE41A/formResponse"
+
   method="POST"
-  target="googleFormTarget"
-  style="display:none"
+
+  target="rsvpTarget"
+
+  style="display:none;"
 >
 
-  <!-- NAME -->
+
+  <!-- GOOGLE FORM: NAME -->
+
   <input
     type="hidden"
     name="entry.1498135098"
-    id="googleName"
+    id="rsvpName"
   >
 
-  <!-- ATTENDANCE -->
+
+  <!-- GOOGLE FORM: ATTENDANCE -->
+
   <input
     type="hidden"
     name="entry.877086558"
-    id="googleAttendance"
+    id="rsvpAttendance"
   >
 
-  <!-- NUMBER OF GUESTS -->
+
+  <!-- GOOGLE FORM: NUMBER OF GUESTS -->
+
   <input
     type="hidden"
     name="entry.2606285"
-    id="googleGuests"
+    id="rsvpGuests"
   >
+
 
 </form>
 
 
+
 <script>
 
-const env = document.getElementById('env');
-const intro = document.getElementById('intro');
-const inv = document.getElementById('inv');
-const wrap = document.getElementById('wrap');
+/* =====================================================
+   ELEMENTS
+   ===================================================== */
 
-const music = document.getElementById('music');
-const mb = document.getElementById('musicBtn');
+const env =
+  document.getElementById("env");
 
-const yes = document.getElementById('yes');
-const no = document.getElementById('no');
+const intro =
+  document.getElementById("intro");
 
-const plus = document.getElementById('plus');
-const minus = document.getElementById('minus');
+const inv =
+  document.getElementById("inv");
 
-const countDisplay = document.getElementById('count');
+const wrap =
+  document.getElementById("wrap");
 
-const submitButton = document.getElementById('submit');
+const music =
+  document.getElementById("music");
 
-const closeButton = document.getElementById('close');
+const musicBtn =
+  document.getElementById("musicBtn");
+
+const yes =
+  document.getElementById("yes");
+
+const no =
+  document.getElementById("no");
+
+const plus =
+  document.getElementById("plus");
+
+const minus =
+  document.getElementById("minus");
+
+const countDisplay =
+  document.getElementById("count");
+
+const submitButton =
+  document.getElementById("submit");
+
+const closeButton =
+  document.getElementById("close");
+
+const nameInput =
+  document.getElementById("name");
+
+const rsvpForm =
+  document.getElementById("rsvpForm");
+
+
+/* =====================================================
+   RSVP VARIABLES
+   ===================================================== */
 
 let opened = false;
-let count = 1;
-let attendance = null;
+
+let guestCount = 1;
+
+let attendance = "";
 
 
 /* =====================================================
    OPEN INVITATION
    ===================================================== */
 
-function openInvitation(){
+function openInvitation() {
 
-  if(opened){
+  if (opened) {
     return;
   }
 
   opened = true;
 
-  env.classList.add('open');
+  env.classList.add("open");
 
-  setTimeout(function(){
 
-    intro.style.display = 'none';
+  setTimeout(function() {
 
-    inv.style.display = 'block';
+    intro.style.display = "none";
 
-    mb.style.display = 'block';
+    inv.style.display = "block";
+
+    musicBtn.style.display = "block";
 
     window.scrollTo({
-      top:0,
-      behavior:'smooth'
+      top: 0,
+      behavior: "smooth"
     });
 
-  },2100);
+  }, 2100);
 
 
-  music.play().catch(function(){
-
-  });
+  music.play().catch(function() {});
 
 }
 
 
-wrap.addEventListener('click',openInvitation);
+wrap.addEventListener(
+  "click",
+  openInvitation
+);
 
 
 /* =====================================================
    MUSIC
    ===================================================== */
 
-mb.addEventListener('click',function(){
+musicBtn.addEventListener(
+  "click",
+  function() {
 
-  if(music.paused){
+    if (music.paused) {
 
-    music.play();
+      music.play();
 
-    mb.textContent = '♫ Music On';
+      musicBtn.textContent =
+        "♫ Music On";
 
-  }else{
+    } else {
 
-    music.pause();
+      music.pause();
 
-    mb.textContent = '♫ Music Off';
+      musicBtn.textContent =
+        "♫ Music Off";
+
+    }
 
   }
-
-});
+);
 
 
 /* =====================================================
-   ATTENDANCE
+   YES
    ===================================================== */
 
-yes.addEventListener('click',function(){
+yes.addEventListener(
+  "click",
+  function() {
 
-  attendance = "Yes, I'll be there";
+    attendance =
+      "Yes, I'll be there";
 
-  yes.classList.add('active');
+    yes.classList.add("active");
 
-  no.classList.remove('active');
-
-});
+    no.classList.remove("active");
 
 
-no.addEventListener('click',function(){
+    if (guestCount < 1) {
 
-  attendance = "Sorry, can't make it";
+      guestCount = 1;
 
-  no.classList.add('active');
+      countDisplay.textContent =
+        "1";
 
-  yes.classList.remove('active');
+    }
 
-  count = 0;
+  }
+);
 
-  countDisplay.textContent = "0";
 
-});
+/* =====================================================
+   NO
+   ===================================================== */
+
+no.addEventListener(
+  "click",
+  function() {
+
+    attendance =
+      "Sorry, can't make it";
+
+    no.classList.add("active");
+
+    yes.classList.remove("active");
+
+    guestCount = 0;
+
+    countDisplay.textContent =
+      "0";
+
+  }
+);
 
 
 /* =====================================================
    PLUS
    ===================================================== */
 
-plus.addEventListener('click',function(){
+plus.addEventListener(
+  "click",
+  function() {
 
-  if(attendance === false){
-    return;
+    if (
+      attendance ===
+      "Sorry, can't make it"
+    ) {
+      return;
+    }
+
+
+    if (guestCount < 20) {
+
+      guestCount++;
+
+      countDisplay.textContent =
+        String(guestCount);
+
+    }
+
   }
-
-  if(count < 20){
-
-    count++;
-
-    countDisplay.textContent = count;
-
-  }
-
-});
+);
 
 
 /* =====================================================
    MINUS
    ===================================================== */
 
-minus.addEventListener('click',function(){
+minus.addEventListener(
+  "click",
+  function() {
 
-  if(count > 1){
+    if (guestCount > 1) {
 
-    count--;
+      guestCount--;
 
-    countDisplay.textContent = count;
+      countDisplay.textContent =
+        String(guestCount);
+
+    }
 
   }
-
-});
+);
 
 
 /* =====================================================
-   RSVP SUBMISSION
+   RSVP SUBMIT
    ===================================================== */
 
-submitButton.addEventListener('click',function(){
-
-  const guestName =
-    document.getElementById('name').value.trim();
-
-
-  /* NAME CHECK */
-
-  if(!guestName){
-
-    alert('Please enter your name first.');
-
-    return;
-
-  }
+submitButton.addEventListener(
+  "click",
+  function() {
 
 
-  /* ATTENDANCE CHECK */
+    /* NAME */
 
-  if(attendance === null){
-
-    alert('Please select whether you will attend.');
-
-    return;
-
-  }
+    const name =
+      nameInput.value.trim();
 
 
-  /* PUT VALUES INTO GOOGLE FORM */
+    if (!name) {
 
-  document.getElementById('googleName').value =
-    guestName;
+      alert(
+        "Please enter your name first."
+      );
 
+      nameInput.focus();
 
-  document.getElementById('googleAttendance').value =
-    attendance;
+      return;
 
-
-  document.getElementById('googleGuests').value =
-    attendance === "Yes, I'll be there"
-      ? String(count)
-      : "0";
+    }
 
 
-  /* DISABLE BUTTON */
+    /* ATTENDANCE */
 
-  submitButton.disabled = true;
+    if (!attendance) {
 
-  submitButton.textContent =
-    'SUBMITTING… ♥';
+      alert(
+        "Please select whether you will attend."
+      );
+
+      return;
+
+    }
 
 
-  /* SUBMIT DIRECTLY TO GOOGLE FORMS */
+    /* =================================================
+       PUT DATA INTO GOOGLE FORM
+       ================================================= */
 
-  document.getElementById('googleRSVP').submit();
+
+    document.getElementById(
+      "rsvpName"
+    ).value = name;
 
 
-  /*
-  Google Forms accepts the submission in the
-  hidden iframe. Give it a moment before showing
-  the success message.
-  */
+    document.getElementById(
+      "rsvpAttendance"
+    ).value = attendance;
 
-  setTimeout(function(){
 
-    submitButton.disabled = false;
+    document.getElementById(
+      "rsvpGuests"
+    ).value =
+      attendance ===
+      "Yes, I'll be there"
+        ? String(guestCount)
+        : "0";
+
+
+    /* =================================================
+       DISABLE BUTTON
+       ================================================= */
+
+    submitButton.disabled = true;
 
     submitButton.textContent =
-      'RSVP NOW ♥';
+      "SUBMITTING… ♥";
 
 
-    alert(
-      'Thank you! Your RSVP has been submitted successfully. 💙🤍'
+    /* =================================================
+       SUBMIT TO GOOGLE FORM
+       ================================================= */
+
+    rsvpForm.submit();
+
+
+    /* =================================================
+       SUCCESS MESSAGE
+       ================================================= */
+
+    setTimeout(
+      function() {
+
+        submitButton.disabled =
+          false;
+
+        submitButton.textContent =
+          "RSVP NOW ♥";
+
+
+        alert(
+          "Thank you! Your RSVP has been submitted successfully. 💙🤍"
+        );
+
+
+        /* Reset form */
+
+        nameInput.value = "";
+
+        attendance = "";
+
+        guestCount = 1;
+
+        countDisplay.textContent =
+          "1";
+
+        yes.classList.remove(
+          "active"
+        );
+
+        no.classList.remove(
+          "active"
+        );
+
+      },
+      2000
     );
 
-
-  },2000);
-
-});
+  }
+);
 
 
 /* =====================================================
    CLOSE INVITATION
    ===================================================== */
 
-closeButton.addEventListener('click',function(){
+closeButton.addEventListener(
+  "click",
+  function() {
 
-  opened = false;
+    opened = false;
 
-  inv.style.display = 'none';
+    inv.style.display = "none";
 
-  intro.style.display = 'flex';
+    intro.style.display = "flex";
 
-  env.classList.remove('open');
+    env.classList.remove("open");
 
-  music.pause();
+    music.pause();
 
-  music.currentTime = 0;
+    music.currentTime = 0;
 
-  mb.style.display = 'none';
+    musicBtn.style.display = "none";
 
-  window.scrollTo({
-    top:0,
-    behavior:'smooth'
-  });
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
 
-});
+  }
+);
 
 
 /* =====================================================
@@ -952,68 +1269,102 @@ closeButton.addEventListener('click',function(){
    ===================================================== */
 
 const canvas =
-  document.getElementById('fx');
+  document.getElementById("fx");
 
 const ctx =
-  canvas.getContext('2d');
+  canvas.getContext("2d");
 
 let W;
 let H;
 
-let particles = [];
-let stars = [];
+const particles = [];
+
+const stars = [];
 
 
-function resizeCanvas(){
+function resizeCanvas() {
 
-  W = canvas.width = window.innerWidth;
+  W =
+    canvas.width =
+    window.innerWidth;
 
-  H = canvas.height = window.innerHeight;
+  H =
+    canvas.height =
+    window.innerHeight;
 
 }
 
 
 resizeCanvas();
 
+
 window.addEventListener(
-  'resize',
+  "resize",
   resizeCanvas
 );
 
 
-for(let i=0;i<28;i++){
+/* Particles */
+
+for (
+  let i = 0;
+  i < 28;
+  i++
+) {
 
   particles.push({
 
-    x:Math.random()*window.innerWidth,
+    x:
+      Math.random() *
+      window.innerWidth,
 
-    y:Math.random()*window.innerHeight,
+    y:
+      Math.random() *
+      window.innerHeight,
 
-    r:4+Math.random()*7,
+    r:
+      4 +
+      Math.random() * 7,
 
-    v:.3+Math.random()*.6
+    v:
+      .3 +
+      Math.random() * .6
 
   });
 
 }
 
 
-for(let i=0;i<40;i++){
+/* Stars */
+
+for (
+  let i = 0;
+  i < 40;
+  i++
+) {
 
   stars.push({
 
-    x:Math.random()*window.innerWidth,
+    x:
+      Math.random() *
+      window.innerWidth,
 
-    y:Math.random()*window.innerHeight,
+    y:
+      Math.random() *
+      window.innerHeight,
 
-    p:Math.random()*6.28
+    p:
+      Math.random() *
+      6.28
 
   });
 
 }
 
 
-function animateEffects(){
+/* Animation */
+
+function animateEffects() {
 
   ctx.clearRect(
     0,
@@ -1023,58 +1374,72 @@ function animateEffects(){
   );
 
 
-  if(opened){
+  if (opened) {
 
-    particles.forEach(function(a){
 
-      a.y += a.v;
+    particles.forEach(
+      function(p) {
 
-      if(a.y > H){
+        p.y += p.v;
 
-        a.y = -10;
+
+        if (p.y > H) {
+
+          p.y = -10;
+
+        }
+
+
+        ctx.fillStyle =
+          "rgba(55,108,191,.55)";
+
+
+        ctx.beginPath();
+
+
+        ctx.ellipse(
+          p.x,
+          p.y,
+          p.r,
+          p.r * .55,
+          0,
+          0,
+          6.28
+        );
+
+
+        ctx.fill();
 
       }
-
-      ctx.fillStyle =
-        'rgba(55,108,191,.55)';
-
-      ctx.beginPath();
-
-      ctx.ellipse(
-        a.x,
-        a.y,
-        a.r,
-        a.r*.55,
-        0,
-        0,
-        6.28
-      );
-
-      ctx.fill();
-
-    });
+    );
 
 
-    stars.forEach(function(a){
+    stars.forEach(
+      function(s) {
 
-      a.p += .015;
+        s.p += .015;
 
-      ctx.fillStyle =
-        'rgba(242,204,111,.35)';
 
-      ctx.beginPath();
+        ctx.fillStyle =
+          "rgba(242,204,111,.35)";
 
-      ctx.arc(
-        a.x,
-        a.y,
-        1.5+Math.sin(a.p),
-        0,
-        6.28
-      );
 
-      ctx.fill();
+        ctx.beginPath();
 
-    });
+
+        ctx.arc(
+          s.x,
+          s.y,
+          1.5 + Math.sin(s.p),
+          0,
+          6.28
+        );
+
+
+        ctx.fill();
+
+      }
+    );
 
   }
 
