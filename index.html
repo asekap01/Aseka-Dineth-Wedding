@@ -1,27 +1,28 @@
-```html
 <!doctype html>
-<html lang="en">
+<html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>Aseka & Dineth — Wedding Invitation</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box
+}
 
 body{
   margin:0;
   background:radial-gradient(circle at 50% 25%,#1d4a87,#0b2855 48%,#020b1c);
   color:white;
-  font-family:Georgia,serif;
+  font-family:Georgia,serif
 }
 
 .scene{
   min-height:100vh;
   display:flex;
   justify-content:center;
-  padding:20px;
+  padding:20px
 }
 
 .intro{
@@ -31,26 +32,26 @@ body{
   display:flex;
   flex-direction:column;
   justify-content:center;
-  align-items:center;
+  align-items:center
 }
 
 .monogram{
   color:#e8c873;
   letter-spacing:8px;
-  font-size:23px;
+  font-size:23px
 }
 
 h1{
   font-size:clamp(38px,8vw,64px);
   font-weight:400;
   font-style:italic;
-  margin:5px;
+  margin:5px
 }
 
 .sub{
   font-size:12px;
   letter-spacing:4px;
-  color:#eee2c8;
+  color:#eee2c8
 }
 
 .envelope-wrap{
@@ -59,7 +60,7 @@ h1{
   min-height:240px;
   margin:42px auto 16px;
   perspective:1800px;
-  cursor:pointer;
+  cursor:pointer
 }
 
 .envelope{
@@ -68,7 +69,7 @@ h1{
   height:100%;
   transform-style:preserve-3d;
   filter:drop-shadow(0 32px 42px #0009);
-  transition:transform 1.4s;
+  transition:transform 1.4s
 }
 
 .back{
@@ -76,7 +77,7 @@ h1{
   inset:0;
   border-radius:14px;
   background:linear-gradient(145deg,#fbf5ea,#d6c9b5);
-  border:2px solid #d4aa58;
+  border:2px solid #d4aa58
 }
 
 .paper{
@@ -92,7 +93,7 @@ h1{
   transition:transform 2.2s cubic-bezier(.16,.82,.2,1);
   display:grid;
   place-items:center;
-  color:#173a70;
+  color:#173a70
 }
 
 .flap{
@@ -103,26 +104,27 @@ h1{
   clip-path:polygon(0 0,100% 0,50% 100%);
   transform-origin:top;
   transition:transform 2s;
-  z-index:7;
+  z-index:7
 }
 
-.left,.right{
+.left,
+.right{
   position:absolute;
   bottom:0;
   width:53%;
   height:73%;
   background:linear-gradient(145deg,#f4ede2,#e1d6c4);
-  z-index:6;
+  z-index:6
 }
 
 .left{
   left:0;
-  clip-path:polygon(0 0,100% 100%,0 100%);
+  clip-path:polygon(0 0,100% 100%,0 100%)
 }
 
 .right{
   right:0;
-  clip-path:polygon(100% 0,100% 100%,0 100%);
+  clip-path:polygon(100% 0,100% 100%,0 100%)
 }
 
 .seal{
@@ -140,38 +142,38 @@ h1{
   display:grid;
   place-items:center;
   font-weight:bold;
-  transition:1s;
+  transition:1s
 }
 
 .envelope.open{
-  transform:translateY(-12px) scale(1.01);
+  transform:translateY(-12px) scale(1.01)
 }
 
 .envelope.open .flap{
   transform:rotateX(180deg);
-  z-index:1;
+  z-index:1
 }
 
 .envelope.open .paper{
-  transform:translateY(-17%);
+  transform:translateY(-17%)
 }
 
 .envelope.open .seal{
   opacity:0;
-  transform:translate(-50%,-50%) scale(.55);
+  transform:translate(-50%,-50%) scale(.55)
 }
 
 .hint{
   color:#f1ddb0;
   font-size:13px;
-  letter-spacing:2px;
+  letter-spacing:2px
 }
 
 .inv{
   display:none;
   width:min(100%,760px);
   animation:fade 1.8s ease;
-  padding-bottom:40px;
+  padding-bottom:40px
 }
 
 @keyframes fade{
@@ -189,36 +191,37 @@ h1{
   background:#fff;
   padding:10px;
   border-radius:15px;
-  box-shadow:0 28px 65px #000b;
+  box-shadow:0 28px 65px #000b
+}
+
+.invite-image{
+  position:relative;
+  width:100%
 }
 
 .card img{
   width:100%;
   display:block;
-  border-radius:9px;
+  border-radius:9px
 }
 
-/* CLICKABLE LOCATION AREA INSIDE THE INVITATION IMAGE */
-.invite-image{
-  position:relative;
-  width:100%;
-}
+/* CLICKABLE LOCATION AREA INSIDE THE INVITATION */
 
 .map-hotspot{
   position:absolute;
-  left:18%;
-  top:68.8%;
-  width:39%;
-  height:5.2%;
+  left:17%;
+  top:68%;
+  width:66%;
+  height:8%;
   display:block;
   border-radius:30px;
   cursor:pointer;
-  z-index:20;
+  z-index:20
 }
 
 .map-hotspot:focus{
   outline:2px solid #e4c16f;
-  outline-offset:2px;
+  outline-offset:2px
 }
 
 /* RSVP */
@@ -229,14 +232,16 @@ h1{
   background:linear-gradient(145deg,#071f4b,#0b2d63);
   border:1px solid #c99a3b;
   padding:28px 20px 30px;
-  box-shadow:0 18px 50px #0008,inset 0 0 45px rgba(216,177,95,.06);
+  box-shadow:
+    0 18px 50px #0008,
+    inset 0 0 45px rgba(216,177,95,.06)
 }
 
 .deadline{
   text-align:center;
   color:#d8b15f;
   letter-spacing:5px;
-  font-size:13px;
+  font-size:13px
 }
 
 .rsvp h2{
@@ -245,7 +250,7 @@ h1{
   font-size:clamp(36px,7vw,56px);
   line-height:1.25;
   margin:35px 0;
-  color:#fffaf0;
+  color:#fffaf0
 }
 
 .goldline{
@@ -254,7 +259,7 @@ h1{
   gap:18px;
   color:#d69a24;
   font-size:25px;
-  margin-bottom:35px;
+  margin-bottom:35px
 }
 
 .goldline:before,
@@ -262,7 +267,7 @@ h1{
   content:"";
   height:1px;
   background:#8e5d18;
-  flex:1;
+  flex:1
 }
 
 .label{
@@ -271,7 +276,7 @@ h1{
   letter-spacing:5px;
   font-size:14px;
   text-transform:uppercase;
-  margin:0 0 14px;
+  margin:0 0 14px
 }
 
 .input{
@@ -284,18 +289,18 @@ h1{
   padding:0 38px;
   font:21px Georgia;
   margin-bottom:34px;
-  outline:none;
+  outline:none
 }
 
 .input::placeholder{
-  color:#b7b3ac;
+  color:#b7b3ac
 }
 
 .attend{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:22px;
-  margin-bottom:34px;
+  margin-bottom:34px
 }
 
 .choice{
@@ -307,12 +312,12 @@ h1{
   letter-spacing:3px;
   font-size:14px;
   padding:20px;
-  cursor:pointer;
+  cursor:pointer
 }
 
 .choice.active{
   background:#b78a35;
-  color:#fffaf0;
+  color:#fffaf0
 }
 
 .counter{
@@ -324,7 +329,7 @@ h1{
   align-items:center;
   justify-content:space-between;
   padding:0 18px;
-  margin-bottom:32px;
+  margin-bottom:32px
 }
 
 .counter button{
@@ -335,11 +340,11 @@ h1{
   background:#12396f;
   color:#e3c36f;
   font-size:38px;
-  cursor:pointer;
+  cursor:pointer
 }
 
 .count{
-  font-size:44px;
+  font-size:44px
 }
 
 .submit{
@@ -351,28 +356,19 @@ h1{
   color:#071c3d;
   font:20px Georgia;
   letter-spacing:4px;
-  cursor:pointer;
+  cursor:pointer
 }
 
 .submit:disabled{
-  opacity:.65;
-  cursor:wait;
+  opacity:.7;
+  cursor:wait
 }
 
 .note{
   text-align:center;
   color:#d8d4ca;
   font-size:13px;
-  line-height:1.6;
-}
-
-.success{
-  display:none;
-  text-align:center;
-  padding:20px 10px 5px;
-  color:#f7dfa0;
-  font-size:18px;
-  line-height:1.6;
+  line-height:1.6
 }
 
 .backbtn{
@@ -382,7 +378,7 @@ h1{
   background:none;
   color:#e8cf96;
   text-decoration:underline;
-  cursor:pointer;
+  cursor:pointer
 }
 
 .music{
@@ -395,27 +391,35 @@ h1{
   background:#08285d;
   color:white;
   border-radius:999px;
-  padding:10px 15px;
+  padding:10px 15px
 }
 
 #fx{
   position:fixed;
   inset:0;
-  pointer-events:none;
+  pointer-events:none
 }
 
 @media(max-width:520px){
+
   .attend{
-    gap:12px;
+    gap:12px
   }
 
   .choice{
     font-size:12px;
-    letter-spacing:2px;
+    letter-spacing:2px
   }
 
   .input{
-    padding:0 24px;
+    padding:0 24px
+  }
+
+  .map-hotspot{
+    left:15%;
+    width:70%;
+    top:67%;
+    height:10%
   }
 }
 </style>
@@ -429,17 +433,26 @@ h1{
   <source src="beautiful_in_white_instrumental.mp3" type="audio/mpeg">
 </audio>
 
-<button class="music" id="musicBtn">♫ Music On</button>
+<button class="music" id="musicBtn">
+  ♫ Music On
+</button>
+
 
 <div class="scene">
 
 <section class="intro" id="intro">
 
-  <div class="monogram">A ♥ D</div>
+  <div class="monogram">
+    A ♥ D
+  </div>
 
-  <h1>Aseka & Dineth</h1>
+  <h1>
+    Aseka & Dineth
+  </h1>
 
-  <div class="sub">OUR WEDDING INVITATION</div>
+  <div class="sub">
+    OUR WEDDING INVITATION
+  </div>
 
   <div class="envelope-wrap" id="wrap">
 
@@ -465,7 +478,9 @@ h1{
 
   </div>
 
-  <div class="hint">TAP / CLICK TO OPEN</div>
+  <div class="hint">
+    TAP / CLICK TO OPEN
+  </div>
 
   <p>
     Friday • May 07, 2027 • 6:00 PM<br>
@@ -477,7 +492,6 @@ h1{
 
 <section class="inv" id="inv">
 
-  <!-- INVITATION IMAGE -->
   <div class="card invite-card">
 
     <div class="invite-image">
@@ -487,13 +501,16 @@ h1{
         alt="Aseka and Dineth wedding invitation"
       >
 
-      <!-- ONLY THE VIEW LOCATION AREA INSIDE THE IMAGE IS CLICKABLE -->
+      <!--
+      CLICKING THIS AREA OPENS GOOGLE MAPS
+      -->
+
       <a
         class="map-hotspot"
-        href="https://www.google.com/maps/search/?api=1&query=Paradise%20Inn%20Bolgoda%2C%20QWP5%2B3C8%2C%2067%20Meegahawatte%20Rd%2C%20Piliyandala%2010300%2C%20Sri%20Lanka"
+        href="https://www.google.com/maps/search/?api=1&query=Paradise+Inn+Bolgoda%2C+QWP5%2B3C8%2C+67+Meegahawatte+Rd%2C+Piliyandala+10300%2C+Sri+Lanka"
         target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Open Paradise Inn Bolgoda in Google Maps"
+        rel="noopener"
+        aria-label="View Paradise Inn Bolgoda on Google Maps"
       ></a>
 
     </div>
@@ -501,7 +518,8 @@ h1{
   </div>
 
 
-  <!-- RSVP -->
+  <!-- RSVP SECTION -->
+
   <div class="rsvp">
 
     <div class="deadline">
@@ -513,7 +531,9 @@ h1{
       Celebrate With You!
     </h2>
 
-    <div class="goldline">♥</div>
+    <div class="goldline">
+      ♥
+    </div>
 
 
     <label class="label">
@@ -593,15 +613,9 @@ h1{
       RSVP NOW ♥
     </button>
 
-    <p class="note" id="note">
-      Your RSVP is submitted directly to our wedding RSVP list.
+    <p class="note">
+      Your RSVP will be sent securely to our wedding RSVP list.
     </p>
-
-    <div class="success" id="success">
-      ♥ Thank you! ♥<br>
-      Your RSVP has been received.<br>
-      We can't wait to celebrate with you!
-    </div>
 
   </div>
 
@@ -619,13 +633,9 @@ h1{
 </div>
 
 
-<!--
-  HIDDEN GOOGLE FORM
-
-  IMPORTANT:
-  This is NOT the Apps Script.
-  It sends directly to your Google Form.
--->
+<!-- =====================================================
+     HIDDEN GOOGLE FORM
+     ===================================================== -->
 
 <iframe
   name="googleFormTarget"
@@ -635,25 +645,28 @@ h1{
 
 
 <form
-  id="googleRsvpForm"
+  id="googleRSVP"
   action="https://docs.google.com/forms/d/e/1FAIpQLSeFx4IMOppN0a5KVuo6iAZTgzkfWtf88dx7V9bko78_1oE41A/formResponse"
   method="POST"
   target="googleFormTarget"
   style="display:none"
 >
 
-  <input
-    type="hidden"
-    name="entry.877086558"
-    id="googleAttendance"
-  >
-
+  <!-- NAME -->
   <input
     type="hidden"
     name="entry.1498135098"
     id="googleName"
   >
 
+  <!-- ATTENDANCE -->
+  <input
+    type="hidden"
+    name="entry.877086558"
+    id="googleAttendance"
+  >
+
+  <!-- NUMBER OF GUESTS -->
   <input
     type="hidden"
     name="entry.2606285"
@@ -665,120 +678,116 @@ h1{
 
 <script>
 
-const env = document.getElementById("env");
-const intro = document.getElementById("intro");
-const inv = document.getElementById("inv");
-const wrap = document.getElementById("wrap");
+const env = document.getElementById('env');
+const intro = document.getElementById('intro');
+const inv = document.getElementById('inv');
+const wrap = document.getElementById('wrap');
 
-const music = document.getElementById("music");
-const musicBtn = document.getElementById("musicBtn");
+const music = document.getElementById('music');
+const mb = document.getElementById('musicBtn');
 
-const yes = document.getElementById("yes");
-const no = document.getElementById("no");
+const yes = document.getElementById('yes');
+const no = document.getElementById('no');
 
-const plus = document.getElementById("plus");
-const minus = document.getElementById("minus");
+const plus = document.getElementById('plus');
+const minus = document.getElementById('minus');
 
-const countDisplay = document.getElementById("count");
+const countDisplay = document.getElementById('count');
 
-const submit = document.getElementById("submit");
+const submitButton = document.getElementById('submit');
 
-const nameInput = document.getElementById("name");
-
-const closeBtn = document.getElementById("close");
-
-const googleForm = document.getElementById("googleRsvpForm");
-
-const googleName = document.getElementById("googleName");
-const googleAttendance = document.getElementById("googleAttendance");
-const googleGuests = document.getElementById("googleGuests");
-
-const note = document.getElementById("note");
-const success = document.getElementById("success");
-
+const closeButton = document.getElementById('close');
 
 let opened = false;
 let count = 1;
 let attendance = null;
 
 
-/* OPEN INVITATION */
+/* =====================================================
+   OPEN INVITATION
+   ===================================================== */
 
-function openIt(){
+function openInvitation(){
 
-  if(opened) return;
+  if(opened){
+    return;
+  }
 
   opened = true;
 
-  env.classList.add("open");
+  env.classList.add('open');
 
   setTimeout(function(){
 
-    intro.style.display = "none";
-    inv.style.display = "block";
-    musicBtn.style.display = "block";
+    intro.style.display = 'none';
+
+    inv.style.display = 'block';
+
+    mb.style.display = 'block';
 
     window.scrollTo({
       top:0,
-      behavior:"smooth"
+      behavior:'smooth'
     });
 
   },2100);
 
-  music.play().catch(function(){});
+
+  music.play().catch(function(){
+
+  });
 
 }
 
-wrap.addEventListener("click",openIt);
+
+wrap.addEventListener('click',openInvitation);
 
 
-/* MUSIC */
+/* =====================================================
+   MUSIC
+   ===================================================== */
 
-musicBtn.addEventListener("click",function(){
+mb.addEventListener('click',function(){
 
   if(music.paused){
 
-    music.play().catch(function(){});
+    music.play();
 
-    musicBtn.textContent = "♫ Music On";
+    mb.textContent = '♫ Music On';
 
   }else{
 
     music.pause();
 
-    musicBtn.textContent = "♫ Music Off";
+    mb.textContent = '♫ Music Off';
 
   }
 
 });
 
 
-/* ATTEND YES */
+/* =====================================================
+   ATTENDANCE
+   ===================================================== */
 
-yes.addEventListener("click",function(){
+yes.addEventListener('click',function(){
 
-  attendance = true;
+  attendance = "Yes, I'll be there";
 
-  yes.classList.add("active");
-  no.classList.remove("active");
+  yes.classList.add('active');
 
-  if(count < 1){
-    count = 1;
-  }
-
-  countDisplay.textContent = count;
+  no.classList.remove('active');
 
 });
 
 
-/* ATTEND NO */
+no.addEventListener('click',function(){
 
-no.addEventListener("click",function(){
+  attendance = "Sorry, can't make it";
 
-  attendance = false;
+  no.classList.add('active');
 
-  no.classList.add("active");
-  yes.classList.remove("active");
+  yes.classList.remove('active');
 
   count = 0;
 
@@ -787,169 +796,171 @@ no.addEventListener("click",function(){
 });
 
 
-/* PLUS */
+/* =====================================================
+   PLUS
+   ===================================================== */
 
-plus.addEventListener("click",function(){
+plus.addEventListener('click',function(){
 
   if(attendance === false){
     return;
   }
 
   if(count < 20){
-    count++;
-  }
 
-  countDisplay.textContent = count;
+    count++;
+
+    countDisplay.textContent = count;
+
+  }
 
 });
 
 
-/* MINUS */
+/* =====================================================
+   MINUS
+   ===================================================== */
 
-minus.addEventListener("click",function(){
-
-  if(attendance === false){
-    return;
-  }
+minus.addEventListener('click',function(){
 
   if(count > 1){
-    count--;
-  }
 
-  countDisplay.textContent = count;
+    count--;
+
+    countDisplay.textContent = count;
+
+  }
 
 });
 
 
-/*
-  RSVP SUBMISSION
+/* =====================================================
+   RSVP SUBMISSION
+   ===================================================== */
 
-  This sends directly to:
-  Google Forms → formResponse
+submitButton.addEventListener('click',function(){
 
-  It does NOT use Apps Script.
-*/
+  const guestName =
+    document.getElementById('name').value.trim();
 
-submit.addEventListener("click",function(){
 
-  const guestName = nameInput.value.trim();
-
+  /* NAME CHECK */
 
   if(!guestName){
 
-    alert("Please enter your name first.");
-
-    nameInput.focus();
+    alert('Please enter your name first.');
 
     return;
 
   }
 
+
+  /* ATTENDANCE CHECK */
 
   if(attendance === null){
 
-    alert("Please select whether you will attend.");
+    alert('Please select whether you will attend.');
 
     return;
 
   }
 
 
-  if(attendance === true && count < 1){
+  /* PUT VALUES INTO GOOGLE FORM */
 
-    alert("Please select the number of guests.");
-
-    return;
-
-  }
+  document.getElementById('googleName').value =
+    guestName;
 
 
-  /*
-    Put the answers into the exact Google Form fields.
-  */
+  document.getElementById('googleAttendance').value =
+    attendance;
 
-  googleName.value = guestName;
 
-  googleAttendance.value =
-    attendance
-      ? "Yes, I'll be there"
-      : "Sorry, can't make it";
-
-  googleGuests.value =
-    attendance
+  document.getElementById('googleGuests').value =
+    attendance === "Yes, I'll be there"
       ? String(count)
       : "0";
 
 
-  /*
-    Disable button while submitting.
-  */
+  /* DISABLE BUTTON */
 
-  submit.disabled = true;
+  submitButton.disabled = true;
 
-  submit.textContent = "SUBMITTING… ♥";
+  submitButton.textContent =
+    'SUBMITTING… ♥';
 
 
-  /*
-    Submit directly to Google Forms.
-  */
+  /* SUBMIT DIRECTLY TO GOOGLE FORMS */
 
-  googleForm.submit();
+  document.getElementById('googleRSVP').submit();
 
 
   /*
-    Google Forms receives the response in the background.
+  Google Forms accepts the submission in the
+  hidden iframe. Give it a moment before showing
+  the success message.
   */
 
   setTimeout(function(){
 
-    submit.style.display = "none";
+    submitButton.disabled = false;
 
-    note.style.display = "none";
+    submitButton.textContent =
+      'RSVP NOW ♥';
 
-    success.style.display = "block";
 
-  },1500);
+    alert(
+      'Thank you! Your RSVP has been submitted successfully. 💙🤍'
+    );
+
+
+  },2000);
 
 });
 
 
-/* CLOSE INVITATION */
+/* =====================================================
+   CLOSE INVITATION
+   ===================================================== */
 
-closeBtn.addEventListener("click",function(){
+closeButton.addEventListener('click',function(){
 
   opened = false;
 
-  inv.style.display = "none";
+  inv.style.display = 'none';
 
-  intro.style.display = "flex";
+  intro.style.display = 'flex';
 
-  env.classList.remove("open");
+  env.classList.remove('open');
 
   music.pause();
 
   music.currentTime = 0;
 
-  musicBtn.style.display = "none";
+  mb.style.display = 'none';
 
   window.scrollTo({
     top:0,
-    behavior:"smooth"
+    behavior:'smooth'
   });
 
 });
 
 
-/* DECORATIVE EFFECT */
+/* =====================================================
+   DECORATIVE EFFECTS
+   ===================================================== */
 
-const canvas = document.getElementById("fx");
+const canvas =
+  document.getElementById('fx');
 
-const ctx = canvas.getContext("2d");
+const ctx =
+  canvas.getContext('2d');
 
-let W,H;
+let W;
+let H;
 
 let particles = [];
-
 let stars = [];
 
 
@@ -964,7 +975,10 @@ function resizeCanvas(){
 
 resizeCanvas();
 
-window.addEventListener("resize",resizeCanvas);
+window.addEventListener(
+  'resize',
+  resizeCanvas
+);
 
 
 for(let i=0;i<28;i++){
@@ -999,9 +1013,14 @@ for(let i=0;i<40;i++){
 }
 
 
-function animate(){
+function animateEffects(){
 
-  ctx.clearRect(0,0,W,H);
+  ctx.clearRect(
+    0,
+    0,
+    W,
+    H
+  );
 
 
   if(opened){
@@ -1011,10 +1030,13 @@ function animate(){
       a.y += a.v;
 
       if(a.y > H){
+
         a.y = -10;
+
       }
 
-      ctx.fillStyle = "rgba(55,108,191,.55)";
+      ctx.fillStyle =
+        'rgba(55,108,191,.55)';
 
       ctx.beginPath();
 
@@ -1037,7 +1059,8 @@ function animate(){
 
       a.p += .015;
 
-      ctx.fillStyle = "rgba(242,204,111,.35)";
+      ctx.fillStyle =
+        'rgba(242,204,111,.35)';
 
       ctx.beginPath();
 
@@ -1056,15 +1079,16 @@ function animate(){
   }
 
 
-  requestAnimationFrame(animate);
+  requestAnimationFrame(
+    animateEffects
+  );
 
 }
 
 
-animate();
+animateEffects();
 
 </script>
 
 </body>
 </html>
-```
