@@ -1,11 +1,9 @@
-# Final `index.html`
-
 ```html
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>Aseka & Dineth — Wedding Invitation</title>
 
@@ -14,14 +12,14 @@
   box-sizing:border-box;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
-  background:radial-gradient(
-    circle at 50% 25%,
-    #1d4a87,
-    #0b2855 48%,
-    #020b1c
-  );
+  background:
+    radial-gradient(circle at 50% 25%,#1d4a87,#0b2855 48%,#020b1c);
   color:white;
   font-family:Georgia,serif;
 }
@@ -61,8 +59,6 @@ h1{
   letter-spacing:4px;
   color:#eee2c8;
 }
-
-/* ENVELOPE */
 
 .envelope-wrap{
   width:min(92vw,570px);
@@ -179,8 +175,6 @@ h1{
   letter-spacing:2px;
 }
 
-/* INVITATION */
-
 .inv{
   display:none;
   width:min(100%,760px);
@@ -209,53 +203,52 @@ h1{
 .invite-image{
   position:relative;
   width:100%;
+  line-height:0;
 }
 
 .card img{
   width:100%;
+  height:auto;
   display:block;
   border-radius:9px;
 }
 
 /*
-  INVISIBLE LOCATION BUTTON
+  THIS IS THE CLICKABLE AREA INSIDE THE INVITATION.
 
-  This sits over the "VIEW LOCATION" button
-  already printed inside invitation.png.
-
-  There is NO second visible location button.
+  It sits directly over the "VIEW LOCATION" button
+  in your invitation image.
 */
 
 .map-hotspot{
   position:absolute;
 
   /*
-    Large area so it is easy to tap on phones.
-    It covers the VIEW LOCATION section of the invitation.
+    Location of the VIEW LOCATION button
   */
-  left:10%;
-  top:62%;
-  width:80%;
-  height:17%;
+  left:18%;
+  top:68%;
+  width:64%;
+  height:12%;
 
   display:block;
   cursor:pointer;
-  border-radius:40px;
+  z-index:20;
 
-  /*
-    Completely invisible.
-  */
   background:transparent;
   border:0;
-  z-index:20;
+  outline:none;
+}
+
+.map-hotspot:hover{
+  background:rgba(255,255,255,.04);
+  border-radius:30px;
 }
 
 .map-hotspot:focus{
   outline:2px solid #e4c16f;
   outline-offset:2px;
 }
-
-/* RSVP */
 
 .rsvp{
   margin:28px auto;
@@ -325,6 +318,11 @@ h1{
 
 .input::placeholder{
   color:#b7b3ac;
+}
+
+.input:focus{
+  border-color:#e5c56e;
+  box-shadow:0 0 0 3px rgba(216,177,95,.15);
 }
 
 .attend{
@@ -412,8 +410,6 @@ h1{
   cursor:pointer;
 }
 
-/* MUSIC */
-
 .music{
   display:none;
   position:fixed;
@@ -427,15 +423,11 @@ h1{
   padding:10px 15px;
 }
 
-/* EFFECTS */
-
 #fx{
   position:fixed;
   inset:0;
   pointer-events:none;
 }
-
-/* MOBILE */
 
 @media(max-width:520px){
 
@@ -452,8 +444,11 @@ h1{
     padding:0 24px;
   }
 
-  .rsvp{
-    padding:25px 15px 28px;
+  .map-hotspot{
+    left:14%;
+    top:67%;
+    width:72%;
+    height:14%;
   }
 }
 </style>
@@ -463,28 +458,20 @@ h1{
 
 <canvas id="fx"></canvas>
 
-<!-- MUSIC -->
 <audio id="music" loop>
   <source src="beautiful_in_white_instrumental.mp3" type="audio/mpeg">
 </audio>
 
-<button class="music" id="musicBtn">
-  ♫ Music On
-</button>
-
+<button class="music" id="musicBtn">♫ Music On</button>
 
 <div class="scene">
 
   <!-- OPENING ENVELOPE -->
   <section class="intro" id="intro">
 
-    <div class="monogram">
-      A ♥ D
-    </div>
+    <div class="monogram">A ♥ D</div>
 
-    <h1>
-      Aseka & Dineth
-    </h1>
+    <h1>Aseka & Dineth</h1>
 
     <div class="sub">
       OUR WEDDING INVITATION
@@ -539,17 +526,16 @@ h1{
         >
 
         <!--
-          Clicking this invisible area opens Google Maps.
-          It is positioned over the VIEW LOCATION button
-          printed inside invitation.png.
+          CLICKING THE VIEW LOCATION AREA
+          INSIDE THE INVITATION OPENS GOOGLE MAPS
         -->
-
         <a
           class="map-hotspot"
-          href="https://www.google.com/maps/search/?api=1&query=Paradise+Inn+Bolgoda%2C+QWP5%2B3C8%2C+67+Meegahawatte+Rd%2C+Piliyandala+10300%2C+Sri+Lanka"
+          href="https://www.google.com/maps/search/?api=1&query=QWP5%2B3C8%2C%2067%20Meegahawatte%20Rd%2C%20Piliyandala%2010300%2C%20Sri%20Lanka"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="View Paradise Inn Bolgoda on Google Maps"
+          aria-label="Open Paradise Inn Bolgoda in Google Maps"
+          title="Open location in Google Maps"
         ></a>
 
       </div>
@@ -575,7 +561,7 @@ h1{
 
 
       <!-- NAME -->
-      <label class="label" for="name">
+      <label class="label">
         Your Name
       </label>
 
@@ -625,7 +611,6 @@ h1{
         <button
           type="button"
           id="minus"
-          aria-label="Decrease number of guests"
         >
           −
         </button>
@@ -640,7 +625,6 @@ h1{
         <button
           type="button"
           id="plus"
-          aria-label="Increase number of guests"
         >
           +
         </button>
@@ -658,7 +642,7 @@ h1{
       </button>
 
       <p class="note">
-        Your RSVP is submitted directly to our wedding RSVP list.
+        Your RSVP is submitted privately to our wedding RSVP form.
       </p>
 
     </div>
@@ -678,49 +662,55 @@ h1{
 
 
 <!--
-  HIDDEN GOOGLE FORM SUBMISSION TARGET
+========================================================
+GOOGLE FORM SUBMISSION
+========================================================
 
-  This is important:
-  The RSVP now goes DIRECTLY to your Google Form.
-  It does NOT use Google Apps Script.
+IMPORTANT:
+This is NOT Apps Script.
+
+This submits directly to your working Google Form.
+
+Your Google Form ID:
+1FAIpQLSeFx4IMOppN0a5KVuo6iAZTgzkfWtf88dx7V9bko78_1oE41A
+
+Your field IDs from your Google Form:
+Name       = entry.1498135098
+Attendance = entry.877086558
+Guests     = entry.2606285
+========================================================
 -->
+
 <iframe
   name="googleFormTarget"
   id="googleFormTarget"
   style="display:none;width:0;height:0;border:0"
 ></iframe>
 
-
-<!--
-  YOUR ACTUAL GOOGLE FORM RESPONSE ENDPOINT
--->
 <form
-  id="rsvpForm"
+  id="googleRsvpForm"
   action="https://docs.google.com/forms/d/e/1FAIpQLSeFx4IMOppN0a5KVuo6iAZTgzkfWtf88dx7V9bko78_1oE41A/formResponse"
   method="POST"
   target="googleFormTarget"
   style="display:none"
 >
 
-  <!-- NAME -->
   <input
-    type="hidden"
+    type="text"
     name="entry.1498135098"
-    id="rsvpName"
+    id="googleName"
   >
 
-  <!-- ATTENDANCE -->
   <input
-    type="hidden"
+    type="text"
     name="entry.877086558"
-    id="rsvpAttendance"
+    id="googleAttendance"
   >
 
-  <!-- NUMBER OF GUESTS -->
   <input
-    type="hidden"
+    type="text"
     name="entry.2606285"
-    id="rsvpGuests"
+    id="googleGuests"
   >
 
 </form>
@@ -728,483 +718,434 @@ h1{
 
 <script>
 
-/* =========================
-   BASIC ELEMENTS
-========================= */
+document.addEventListener("DOMContentLoaded", function(){
 
-const env = document.getElementById('env');
-const wrap = document.getElementById('wrap');
-const intro = document.getElementById('intro');
-const inv = document.getElementById('inv');
+  const env = document.getElementById("env");
+  const intro = document.getElementById("intro");
+  const inv = document.getElementById("inv");
+  const wrap = document.getElementById("wrap");
 
-const music = document.getElementById('music');
-const musicBtn = document.getElementById('musicBtn');
+  const music = document.getElementById("music");
+  const musicBtn = document.getElementById("musicBtn");
 
-const yes = document.getElementById('yes');
-const no = document.getElementById('no');
+  const yes = document.getElementById("yes");
+  const no = document.getElementById("no");
 
-const plus = document.getElementById('plus');
-const minus = document.getElementById('minus');
+  const plus = document.getElementById("plus");
+  const minus = document.getElementById("minus");
 
-const countDisplay = document.getElementById('count');
+  const countDisplay = document.getElementById("count");
 
-const submit = document.getElementById('submit');
-const closeBtn = document.getElementById('close');
+  const submit = document.getElementById("submit");
 
-const nameInput = document.getElementById('name');
+  const nameInput = document.getElementById("name");
 
-const rsvpForm = document.getElementById('rsvpForm');
+  const close = document.getElementById("close");
 
-const rsvpName = document.getElementById('rsvpName');
-const rsvpAttendance = document.getElementById('rsvpAttendance');
-const rsvpGuests = document.getElementById('rsvpGuests');
+  const googleForm = document.getElementById("googleRsvpForm");
 
-
-/* =========================
-   RSVP VARIABLES
-========================= */
-
-let opened = false;
-let count = 1;
-let attendance = null;
+  const googleName = document.getElementById("googleName");
+  const googleAttendance = document.getElementById("googleAttendance");
+  const googleGuests = document.getElementById("googleGuests");
 
 
-/* =========================
-   OPEN INVITATION
-========================= */
+  let opened = false;
+  let count = 1;
+  let attendance = null;
 
-function openInvitation(){
 
-  if(opened){
-    return;
+  /*
+  ========================================================
+  OPEN INVITATION
+  ========================================================
+  */
+
+  function openInvitation(){
+
+    if(opened){
+      return;
+    }
+
+    opened = true;
+
+    env.classList.add("open");
+
+    setTimeout(function(){
+
+      intro.style.display = "none";
+
+      inv.style.display = "block";
+
+      musicBtn.style.display = "block";
+
+      window.scrollTo({
+        top:0,
+        behavior:"smooth"
+      });
+
+    },2100);
+
+    music.play().catch(function(){});
+
   }
 
-  opened = true;
+  wrap.addEventListener("click",openInvitation);
 
-  env.classList.add('open');
 
-  setTimeout(function(){
+  /*
+  ========================================================
+  MUSIC
+  ========================================================
+  */
 
-    intro.style.display = 'none';
+  musicBtn.addEventListener("click",function(){
 
-    inv.style.display = 'block';
+    if(music.paused){
 
-    musicBtn.style.display = 'block';
+      music.play().catch(function(){});
 
-    window.scrollTo({
-      top:0,
-      behavior:'smooth'
-    });
+      musicBtn.textContent = "♫ Music On";
 
-  },2100);
+    }else{
 
-  music.play().catch(function(){
+      music.pause();
 
-    /*
-      Browsers may block autoplay.
-      Guest can use Music On button.
-    */
+      musicBtn.textContent = "♫ Music Off";
+
+    }
 
   });
-}
-
-wrap.addEventListener('click',openInvitation);
 
 
-/* =========================
-   MUSIC
-========================= */
+  /*
+  ========================================================
+  YES
+  ========================================================
+  */
 
-musicBtn.addEventListener('click',function(){
+  yes.addEventListener("click",function(){
 
-  if(music.paused){
+    attendance = true;
 
-    music.play();
+    yes.classList.add("active");
 
-    musicBtn.textContent = '♫ Music On';
+    no.classList.remove("active");
 
-  }else{
+    if(count < 1){
+      count = 1;
+    }
+
+    countDisplay.textContent = count;
+
+  });
+
+
+  /*
+  ========================================================
+  NO
+  ========================================================
+  */
+
+  no.addEventListener("click",function(){
+
+    attendance = false;
+
+    no.classList.add("active");
+
+    yes.classList.remove("active");
+
+    count = 0;
+
+    countDisplay.textContent = "0";
+
+  });
+
+
+  /*
+  ========================================================
+  PLUS
+  ========================================================
+  */
+
+  plus.addEventListener("click",function(){
+
+    if(attendance === false){
+      return;
+    }
+
+    if(count < 20){
+      count++;
+    }
+
+    countDisplay.textContent = count;
+
+  });
+
+
+  /*
+  ========================================================
+  MINUS
+  ========================================================
+  */
+
+  minus.addEventListener("click",function(){
+
+    if(attendance === false){
+      return;
+    }
+
+    if(count > 1){
+      count--;
+    }
+
+    countDisplay.textContent = count;
+
+  });
+
+
+  /*
+  ========================================================
+  RSVP SUBMISSION
+  ========================================================
+  */
+
+  submit.addEventListener("click",function(){
+
+    const guestName = nameInput.value.trim();
+
+
+    if(!guestName){
+
+      alert("Please enter your name first.");
+
+      nameInput.focus();
+
+      return;
+
+    }
+
+
+    if(attendance === null){
+
+      alert("Please select whether you will attend.");
+
+      return;
+
+    }
+
+
+    /*
+      Put the answers into the EXACT Google Form fields.
+    */
+
+    googleName.value = guestName;
+
+    googleAttendance.value =
+      attendance
+      ? "Yes, I'll be there"
+      : "Sorry, can't make it";
+
+
+    googleGuests.value =
+      attendance
+      ? String(count)
+      : "0";
+
+
+    /*
+      Disable button while sending.
+    */
+
+    submit.disabled = true;
+
+    submit.textContent = "SUBMITTING… ♥";
+
+
+    /*
+      Submit directly to Google Forms.
+    */
+
+    googleForm.submit();
+
+
+    /*
+      Google Forms submits invisibly through the iframe.
+      We show the success message after a short delay.
+    */
+
+    setTimeout(function(){
+
+      submit.disabled = false;
+
+      submit.textContent = "RSVP NOW ♥";
+
+      alert(
+        "Thank you! Your RSVP has been submitted successfully. 💙🤍"
+      );
+
+    },2000);
+
+  });
+
+
+  /*
+  ========================================================
+  CLOSE INVITATION
+  ========================================================
+  */
+
+  close.addEventListener("click",function(){
+
+    opened = false;
+
+    inv.style.display = "none";
+
+    intro.style.display = "flex";
+
+    env.classList.remove("open");
 
     music.pause();
 
-    musicBtn.textContent = '♫ Music Off';
+    music.currentTime = 0;
 
-  }
+    musicBtn.style.display = "none";
 
-});
-
-
-/* =========================
-   ATTENDANCE
-========================= */
-
-yes.addEventListener('click',function(){
-
-  attendance = true;
-
-  yes.classList.add('active');
-
-  no.classList.remove('active');
-
-  /*
-    If guest accepts, minimum is 1 guest.
-  */
-
-  if(count < 1){
-    count = 1;
-  }
-
-  countDisplay.textContent = count;
-
-});
-
-
-no.addEventListener('click',function(){
-
-  attendance = false;
-
-  no.classList.add('active');
-
-  yes.classList.remove('active');
-
-  /*
-    Declining means zero guests.
-  */
-
-  count = 0;
-
-  countDisplay.textContent = '0';
-
-});
-
-
-/* =========================
-   GUEST COUNTER
-========================= */
-
-plus.addEventListener('click',function(){
-
-  /*
-    If they previously selected decline,
-    selecting + automatically changes to attending.
-  */
-
-  if(attendance === false){
-    attendance = true;
-    no.classList.remove('active');
-    yes.classList.add('active');
-  }
-
-  if(count < 20){
-    count++;
-  }
-
-  if(count < 1){
-    count = 1;
-  }
-
-  countDisplay.textContent = count;
-
-});
-
-
-minus.addEventListener('click',function(){
-
-  if(count > 1){
-    count--;
-  }
-
-  countDisplay.textContent = count;
-
-});
-
-
-/* =========================
-   RSVP SUBMISSION
-========================= */
-
-submit.addEventListener('click',function(){
-
-  const guestName = nameInput.value.trim();
-
-
-  /* CHECK NAME */
-
-  if(!guestName){
-
-    alert('Please enter your name first.');
-
-    nameInput.focus();
-
-    return;
-  }
-
-
-  /* CHECK ATTENDANCE */
-
-  if(attendance === null){
-
-    alert('Please select whether you will attend.');
-
-    return;
-  }
-
-
-  /* PREPARE GOOGLE FORM DATA */
-
-  rsvpName.value = guestName;
-
-
-  if(attendance === true){
-
-    /*
-      This EXACT value matches the
-      Google Form option confirmed
-      by your pre-filled link.
-    */
-
-    rsvpAttendance.value = "Yes, I'll be there";
-
-    rsvpGuests.value = String(
-      count < 1 ? 1 : count
-    );
-
-  }else{
-
-    /*
-      This is the decline option used
-      by your invitation.
-    */
-
-    rsvpAttendance.value = "Sorry, can't make it";
-
-    rsvpGuests.value = "0";
-
-  }
-
-
-  /* DISABLE BUTTON */
-
-  submit.disabled = true;
-
-  submit.textContent = 'SUBMITTING… ♥';
-
-
-  /*
-    SUBMIT DIRECTLY TO GOOGLE FORMS
-
-    The hidden iframe means the guest
-    stays on your beautiful invitation.
-  */
-
-  rsvpForm.submit();
-
-
-  /*
-    Give Google Forms time to receive
-    the submission before showing success.
-  */
-
-  setTimeout(function(){
-
-    submit.disabled = false;
-
-    submit.textContent = 'RSVP NOW ♥';
-
-    alert(
-      'Thank you! Your RSVP has been submitted. 💙🤍'
-    );
-
-
-    /*
-      Clear the form after successful submission.
-    */
-
-    nameInput.value = '';
-
-    attendance = null;
-
-    count = 1;
-
-    countDisplay.textContent = '1';
-
-    yes.classList.remove('active');
-
-    no.classList.remove('active');
-
-  },1800);
-
-});
-
-
-/* =========================
-   CLOSE INVITATION
-========================= */
-
-closeBtn.addEventListener('click',function(){
-
-  opened = false;
-
-  inv.style.display = 'none';
-
-  intro.style.display = 'flex';
-
-  env.classList.remove('open');
-
-  music.pause();
-
-  music.currentTime = 0;
-
-  musicBtn.style.display = 'none';
-
-  window.scrollTo({
-    top:0,
-    behavior:'smooth'
-  });
-
-});
-
-
-/* =========================
-   BLUE & GOLD PARTICLES
-========================= */
-
-const canvas = document.getElementById('fx');
-
-const ctx = canvas.getContext('2d');
-
-let W;
-let H;
-
-let particles = [];
-let stars = [];
-
-
-function resizeCanvas(){
-
-  W = canvas.width = window.innerWidth;
-
-  H = canvas.height = window.innerHeight;
-
-}
-
-resizeCanvas();
-
-window.addEventListener(
-  'resize',
-  resizeCanvas
-);
-
-
-/* PARTICLES */
-
-for(let i=0;i<28;i++){
-
-  particles.push({
-
-    x:Math.random()*window.innerWidth,
-
-    y:Math.random()*window.innerHeight,
-
-    r:4+Math.random()*7,
-
-    v:.3+Math.random()*.6
-
-  });
-
-}
-
-
-/* STARS */
-
-for(let i=0;i<40;i++){
-
-  stars.push({
-
-    x:Math.random()*window.innerWidth,
-
-    y:Math.random()*window.innerHeight,
-
-    p:Math.random()*6.28
-
-  });
-
-}
-
-
-/* ANIMATION */
-
-function animateEffects(){
-
-  ctx.clearRect(
-    0,
-    0,
-    W,
-    H
-  );
-
-
-  if(opened){
-
-    particles.forEach(function(a){
-
-      a.y += a.v;
-
-      if(a.y > H){
-        a.y = -10;
-      }
-
-      ctx.fillStyle =
-        'rgba(55,108,191,.55)';
-
-      ctx.beginPath();
-
-      ctx.ellipse(
-        a.x,
-        a.y,
-        a.r,
-        a.r*.55,
-        0,
-        0,
-        6.28
-      );
-
-      ctx.fill();
-
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
     });
 
+  });
 
-    stars.forEach(function(a){
 
-      a.p += .015;
+  /*
+  ========================================================
+  DECORATIVE EFFECTS
+  ========================================================
+  */
 
-      ctx.fillStyle =
-        'rgba(242,204,111,.35)';
+  const canvas = document.getElementById("fx");
 
-      ctx.beginPath();
+  const ctx = canvas.getContext("2d");
 
-      ctx.arc(
-        a.x,
-        a.y,
-        1.5 + Math.sin(a.p),
-        0,
-        6.28
-      );
+  let W;
+  let H;
 
-      ctx.fill();
+  const particles = [];
+  const stars = [];
+
+
+  function resizeCanvas(){
+
+    W = canvas.width = window.innerWidth;
+
+    H = canvas.height = window.innerHeight;
+
+  }
+
+
+  resizeCanvas();
+
+  window.addEventListener("resize",resizeCanvas);
+
+
+  for(let i=0;i<28;i++){
+
+    particles.push({
+
+      x:Math.random()*window.innerWidth,
+
+      y:Math.random()*window.innerHeight,
+
+      r:4+Math.random()*7,
+
+      v:.3+Math.random()*.6
 
     });
 
   }
 
 
-  requestAnimationFrame(
-    animateEffects
-  );
+  for(let i=0;i<40;i++){
 
-}
+    stars.push({
 
-animateEffects();
+      x:Math.random()*window.innerWidth,
+
+      y:Math.random()*window.innerHeight,
+
+      p:Math.random()*6.28
+
+    });
+
+  }
+
+
+  function effects(){
+
+    ctx.clearRect(0,0,W,H);
+
+
+    if(opened){
+
+      particles.forEach(function(a){
+
+        a.y += a.v;
+
+        if(a.y > H){
+          a.y = -10;
+        }
+
+        ctx.fillStyle = "rgba(55,108,191,.55)";
+
+        ctx.beginPath();
+
+        ctx.ellipse(
+          a.x,
+          a.y,
+          a.r,
+          a.r*.55,
+          0,
+          0,
+          6.28
+        );
+
+        ctx.fill();
+
+      });
+
+
+      stars.forEach(function(a){
+
+        a.p += .015;
+
+        ctx.fillStyle = "rgba(242,204,111,.35)";
+
+        ctx.beginPath();
+
+        ctx.arc(
+          a.x,
+          a.y,
+          1.5+Math.sin(a.p),
+          0,
+          6.28
+        );
+
+        ctx.fill();
+
+      });
+
+    }
+
+
+    requestAnimationFrame(effects);
+
+  }
+
+
+  effects();
+
+});
 
 </script>
 
