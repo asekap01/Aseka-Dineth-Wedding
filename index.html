@@ -1,54 +1,1118 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>Aseka & Dineth — Wedding Invitation</title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% 25%,#1d4a87,#0b2855 48%,#020b1c);color:white;font-family:Georgia,serif}.scene{min-height:100vh;display:flex;justify-content:center;padding:20px}.intro{width:min(100%,760px);min-height:95vh;text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center}.monogram{color:#e8c873;letter-spacing:8px;font-size:23px}h1{font-size:clamp(38px,8vw,64px);font-weight:400;font-style:italic;margin:5px}.sub{font-size:12px;letter-spacing:4px;color:#eee2c8}.envelope-wrap{width:min(92vw,570px);height:min(58vw,345px);min-height:240px;margin:42px auto 16px;perspective:1800px;cursor:pointer}.envelope{position:relative;width:100%;height:100%;transform-style:preserve-3d;filter:drop-shadow(0 32px 42px #0009);transition:transform 1.4s}.back{position:absolute;inset:0;border-radius:14px;background:linear-gradient(145deg,#fbf5ea,#d6c9b5);border:2px solid #d4aa58}.paper{position:absolute;left:7%;right:7%;bottom:3%;height:88%;background:#f5efe6;z-index:2;border-radius:8px;transform:translateY(62%);transition:transform 2.2s cubic-bezier(.16,.82,.2,1);display:grid;place-items:center;color:#173a70}.flap{position:absolute;inset:0 0 auto;height:70%;background:linear-gradient(145deg,#204f91,#082654);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform 2s;z-index:7}.left,.right{position:absolute;bottom:0;width:53%;height:73%;background:linear-gradient(145deg,#f4ede2,#e1d6c4);z-index:6}.left{left:0;clip-path:polygon(0 0,100% 100%,0 100%)}.right{right:0;clip-path:polygon(100% 0,100% 100%,0 100%)}.seal{position:absolute;z-index:10;left:50%;top:54%;transform:translate(-50%,-50%);width:86px;height:86px;border-radius:50%;background:radial-gradient(circle,#f7dfa0,#a87322 75%);border:3px solid #fff5d9;color:#122c59;display:grid;place-items:center;font-weight:bold;transition:1s}.envelope.open{transform:translateY(-12px) scale(1.01)}.envelope.open .flap{transform:rotateX(180deg);z-index:1}.envelope.open .paper{transform:translateY(-17%)}.envelope.open .seal{opacity:0;transform:translate(-50%,-50%) scale(.55)}.hint{color:#f1ddb0;font-size:13px;letter-spacing:2px}.inv{display:none;width:min(100%,760px);animation:fade 1.8s ease;padding-bottom:40px}@keyframes fade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}.card{background:#fff;padding:10px;border-radius:15px;box-shadow:0 28px 65px #000b}.card img{width:100%;display:block;border-radius:9px}
-.invite-image{position:relative;width:100%}
-.map-hotspot{position:absolute;left:18%;top:68.8%;width:39%;height:5.2%;display:block;border-radius:30px;cursor:pointer}
-.map-hotspot:focus{outline:2px solid #e4c16f;outline-offset:2px}.location{text-align:center;margin:22px}.btn{display:inline-block;border:1px solid #d8b15f;border-radius:999px;padding:12px 22px;text-decoration:none;color:#fff;background:#08285d;font-size:13px;letter-spacing:1px}.rsvp{margin:28px auto;max-width:650px;background:linear-gradient(145deg,#071f4b,#0b2d63);border:1px solid #c99a3b;padding:28px 20px 30px;box-shadow:0 18px 50px #0008, inset 0 0 45px rgba(216,177,95,.06)}.deadline{text-align:center;color:#d8b15f;letter-spacing:5px;font-size:13px}.rsvp h2{text-align:center;font-weight:400;font-size:clamp(36px,7vw,56px);line-height:1.25;margin:35px 0;color:#fffaf0}.goldline{display:flex;align-items:center;gap:18px;color:#d69a24;font-size:25px;margin-bottom:35px}.goldline:before,.goldline:after{content:"";height:1px;background:#8e5d18;flex:1}.label{display:block;color:#d69a24;letter-spacing:5px;font-size:14px;text-transform:uppercase;margin:0 0 14px}.input{width:100%;height:72px;border:2px solid #b78a35;border-radius:26px;background:rgba(255,250,240,.08);color:#fff;padding:0 38px;font:21px Georgia;margin-bottom:34px;outline:none}.input::placeholder{color:#b7b3ac}.attend{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:34px}.choice{min-height:110px;border:2px solid #b78a35;border-radius:28px;background:rgba(255,250,240,.07);color:#eee;letter-spacing:3px;font-size:14px;padding:20px;cursor:pointer}.choice.active{background:#b78a35;color:#fffaf0}.counter{height:108px;border:2px solid #b78a35;border-radius:26px;background:#3a2a21;display:flex;align-items:center;justify-content:space-between;padding:0 18px;margin-bottom:32px}.counter button{width:72px;height:72px;border:0;border-radius:22px;background:#12396f;color:#e3c36f;font-size:38px;cursor:pointer}.count{font-size:44px}.submit{width:100%;height:68px;border:0;border-radius:28px;background:linear-gradient(135deg,#d8b15f,#b9852e);color:#071c3d;font:20px Georgia;letter-spacing:4px;cursor:pointer}.note{text-align:center;color:#d8d4ca;font-size:13px;line-height:1.6}.backbtn{display:block;margin:20px auto;border:0;background:none;color:#e8cf96;text-decoration:underline;cursor:pointer}.music{display:none;position:fixed;right:15px;bottom:15px;z-index:30;border:1px solid #d8b15f;background:#08285d;color:white;border-radius:999px;padding:10px 15px}#fx{position:fixed;inset:0;pointer-events:none}
-@media(max-width:520px){.attend{gap:12px}.choice{font-size:12px;letter-spacing:2px}.input{padding:0 24px}}
-</style></head><body><canvas id="fx"></canvas><audio id="music" loop><source src="beautiful_in_white_instrumental.mp3" type="audio/mpeg"></audio><button class="music" id="musicBtn">♫ Music On</button>
-<div class="scene"><section class="intro" id="intro"><div class="monogram">A ♥ D</div><h1>Aseka & Dineth</h1><div class="sub">OUR WEDDING INVITATION</div><div class="envelope-wrap" id="wrap"><div class="envelope" id="env"><div class="back"></div><div class="paper">WITH LOVE • ASEKA & DINETH</div><div class="flap"></div><div class="left"></div><div class="right"></div><div class="seal">A ♥ D</div></div></div><div class="hint">TAP / CLICK TO OPEN</div><p>Friday • May 07, 2027 • 6:00 PM<br>Paradise Inn Bolgoda</p></section>
-<section class="inv" id="inv"><div class="card invite-card">
-  <div class="invite-image">
-    <img src="invitation.png" alt="Aseka and Dineth wedding invitation">
-    <a class="map-hotspot" href="https://www.google.com/maps/search/?api=1&query=Paradise+Inn+Bolgoda%2C+QWP5%2B3C8%2C+67+Meegahawatte+Rd%2C+Piliyandala+10300%2C+Sri+Lanka" target="_blank" rel="noopener" aria-label="View location on Google Maps"></a>
-  </div>
-</div><div class="rsvp"><div class="deadline">KINDLY RSVP BY AUGUST 10, 2026</div><h2>We Can't Wait To<br>Celebrate With You!</h2><div class="goldline">♥</div><label class="label">Your Name</label><input class="input" id="name" placeholder="Your full name"><div class="label">Will You Attend?</div><div class="attend"><button class="choice" id="yes">JOYFULLY ACCEPT</button><button class="choice" id="no">REGRETTABLY<br>DECLINE</button></div><div class="label">Number Of Guests</div><div class="counter"><button id="minus">−</button><div class="count" id="count">1</div><button id="plus">+</button></div><button class="submit" id="submit">RSVP NOW ♥</button><p class="note">Your RSVP is submitted directly to our wedding RSVP list.</p></div>
-<button class="backbtn" id="close">↩ Close invitation</button></section></div>
-<iframe name="rsvpTarget" id="rsvpTarget" style="display:none;width:0;height:0;border:0"></iframe>
-<form id="rsvpForm" action="https://script.google.com/macros/s/AKfycbzEPNALUqgExXBczzMex2su5ENvG-PPSEsa1hEsYIs_CYUwVAzMdeYhe1xagkaLqvzs/exec" method="POST" target="rsvpTarget" style="display:none">
-<input type="hidden" name="name" id="rsvpName">
-<input type="hidden" name="attendance" id="rsvpAttendance">
-<input type="hidden" name="guests" id="rsvpGuests">
+*{box-sizing:border-box}
+
+body{
+margin:0;
+background:radial-gradient(circle at 50% 25%,#1d4a87,#0b2855 48%,#020b1c);
+color:white;
+font-family:Georgia,serif
+}
+
+.scene{
+min-height:100vh;
+display:flex;
+justify-content:center;
+padding:20px
+}
+
+.intro{
+width:min(100%,760px);
+min-height:95vh;
+text-align:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center
+}
+
+.monogram{
+color:#e8c873;
+letter-spacing:8px;
+font-size:23px
+}
+
+h1{
+font-size:clamp(38px,8vw,64px);
+font-weight:400;
+font-style:italic;
+margin:5px
+}
+
+.sub{
+font-size:12px;
+letter-spacing:4px;
+color:#eee2c8
+}
+
+.envelope-wrap{
+width:min(92vw,570px);
+height:min(58vw,345px);
+min-height:240px;
+margin:42px auto 16px;
+perspective:1800px;
+cursor:pointer
+}
+
+.envelope{
+position:relative;
+width:100%;
+height:100%;
+transform-style:preserve-3d;
+filter:drop-shadow(0 32px 42px #0009);
+transition:transform 1.4s
+}
+
+.back{
+position:absolute;
+inset:0;
+border-radius:14px;
+background:linear-gradient(145deg,#fbf5ea,#d6c9b5);
+border:2px solid #d4aa58
+}
+
+.paper{
+position:absolute;
+left:7%;
+right:7%;
+bottom:3%;
+height:88%;
+background:#f5efe6;
+z-index:2;
+border-radius:8px;
+transform:translateY(62%);
+transition:transform 2.2s cubic-bezier(.16,.82,.2,1);
+display:grid;
+place-items:center;
+color:#173a70
+}
+
+.flap{
+position:absolute;
+inset:0 0 auto;
+height:70%;
+background:linear-gradient(145deg,#204f91,#082654);
+clip-path:polygon(0 0,100% 0,50% 100%);
+transform-origin:top;
+transition:transform 2s;
+z-index:7
+}
+
+.left,.right{
+position:absolute;
+bottom:0;
+width:53%;
+height:73%;
+background:linear-gradient(145deg,#f4ede2,#e1d6c4);
+z-index:6
+}
+
+.left{
+left:0;
+clip-path:polygon(0 0,100% 100%,0 100%)
+}
+
+.right{
+right:0;
+clip-path:polygon(100% 0,100% 100%,0 100%)
+}
+
+.seal{
+position:absolute;
+z-index:10;
+left:50%;
+top:54%;
+transform:translate(-50%,-50%);
+width:86px;
+height:86px;
+border-radius:50%;
+background:radial-gradient(circle,#f7dfa0,#a87322 75%);
+border:3px solid #fff5d9;
+color:#122c59;
+display:grid;
+place-items:center;
+font-weight:bold;
+transition:1s
+}
+
+.envelope.open{
+transform:translateY(-12px) scale(1.01)
+}
+
+.envelope.open .flap{
+transform:rotateX(180deg);
+z-index:1
+}
+
+.envelope.open .paper{
+transform:translateY(-17%)
+}
+
+.envelope.open .seal{
+opacity:0;
+transform:translate(-50%,-50%) scale(.55)
+}
+
+.hint{
+color:#f1ddb0;
+font-size:13px;
+letter-spacing:2px
+}
+
+.inv{
+display:none;
+width:min(100%,760px);
+animation:fade 1.8s ease;
+padding-bottom:40px
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(18px)
+}
+to{
+opacity:1;
+transform:none
+}
+}
+
+.card{
+background:#fff;
+padding:10px;
+border-radius:15px;
+box-shadow:0 28px 65px #000b
+}
+
+.card img{
+width:100%;
+display:block;
+border-radius:9px
+}
+
+.invite-image{
+position:relative;
+width:100%
+}
+
+/* CLICKABLE LOCATION ON THE INVITATION */
+.map-hotspot{
+position:absolute;
+left:18%;
+top:68.8%;
+width:39%;
+height:5.2%;
+display:block;
+border-radius:30px;
+cursor:pointer
+}
+
+.map-hotspot:focus{
+outline:2px solid #e4c16f;
+outline-offset:2px
+}
+
+/* EXTRA LOCATION BUTTON */
+.location{
+text-align:center;
+margin:22px
+}
+
+.btn{
+display:inline-block;
+border:1px solid #d8b15f;
+border-radius:999px;
+padding:12px 22px;
+text-decoration:none;
+color:#fff;
+background:#08285d;
+font-size:13px;
+letter-spacing:1px
+}
+
+/* RSVP */
+.rsvp{
+margin:28px auto;
+max-width:650px;
+background:linear-gradient(145deg,#071f4b,#0b2d63);
+border:1px solid #c99a3b;
+padding:28px 20px 30px;
+box-shadow:0 18px 50px #0008,inset 0 0 45px rgba(216,177,95,.06)
+}
+
+.deadline{
+text-align:center;
+color:#d8b15f;
+letter-spacing:5px;
+font-size:13px
+}
+
+.rsvp h2{
+text-align:center;
+font-weight:400;
+font-size:clamp(36px,7vw,56px);
+line-height:1.25;
+margin:35px 0;
+color:#fffaf0
+}
+
+.goldline{
+display:flex;
+align-items:center;
+gap:18px;
+color:#d69a24;
+font-size:25px;
+margin-bottom:35px
+}
+
+.goldline:before,
+.goldline:after{
+content:"";
+height:1px;
+background:#8e5d18;
+flex:1
+}
+
+.label{
+display:block;
+color:#d69a24;
+letter-spacing:5px;
+font-size:14px;
+text-transform:uppercase;
+margin:0 0 14px
+}
+
+.input{
+width:100%;
+height:72px;
+border:2px solid #b78a35;
+border-radius:26px;
+background:rgba(255,250,240,.08);
+color:#fff;
+padding:0 38px;
+font:21px Georgia;
+margin-bottom:34px;
+outline:none
+}
+
+.input::placeholder{
+color:#b7b3ac
+}
+
+.attend{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:22px;
+margin-bottom:34px
+}
+
+.choice{
+min-height:110px;
+border:2px solid #b78a35;
+border-radius:28px;
+background:rgba(255,250,240,.07);
+color:#eee;
+letter-spacing:3px;
+font-size:14px;
+padding:20px;
+cursor:pointer
+}
+
+.choice.active{
+background:#b78a35;
+color:#fffaf0
+}
+
+.counter{
+height:108px;
+border:2px solid #b78a35;
+border-radius:26px;
+background:#3a2a21;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 18px;
+margin-bottom:32px
+}
+
+.counter button{
+width:72px;
+height:72px;
+border:0;
+border-radius:22px;
+background:#12396f;
+color:#e3c36f;
+font-size:38px;
+cursor:pointer
+}
+
+.count{
+font-size:44px
+}
+
+.submit{
+width:100%;
+height:68px;
+border:0;
+border-radius:28px;
+background:linear-gradient(135deg,#d8b15f,#b9852e);
+color:#071c3d;
+font:20px Georgia;
+letter-spacing:4px;
+cursor:pointer
+}
+
+.submit:disabled{
+opacity:.7;
+cursor:wait
+}
+
+.note{
+text-align:center;
+color:#d8d4ca;
+font-size:13px;
+line-height:1.6
+}
+
+.backbtn{
+display:block;
+margin:20px auto;
+border:0;
+background:none;
+color:#e8cf96;
+text-decoration:underline;
+cursor:pointer
+}
+
+.music{
+display:none;
+position:fixed;
+right:15px;
+bottom:15px;
+z-index:30;
+border:1px solid #d8b15f;
+background:#08285d;
+color:white;
+border-radius:999px;
+padding:10px 15px
+}
+
+#fx{
+position:fixed;
+inset:0;
+pointer-events:none
+}
+
+@media(max-width:520px){
+.attend{
+gap:12px
+}
+
+.choice{
+font-size:12px;
+letter-spacing:2px
+}
+
+.input{
+padding:0 24px
+}
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="fx"></canvas>
+
+<audio id="music" loop>
+<source src="beautiful_in_white_instrumental.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music" id="musicBtn">♫ Music On</button>
+
+<div class="scene">
+
+<section class="intro" id="intro">
+
+<div class="monogram">A ♥ D</div>
+
+<h1>Aseka & Dineth</h1>
+
+<div class="sub">OUR WEDDING INVITATION</div>
+
+<div class="envelope-wrap" id="wrap">
+
+<div class="envelope" id="env">
+
+<div class="back"></div>
+
+<div class="paper">
+WITH LOVE • ASEKA & DINETH
+</div>
+
+<div class="flap"></div>
+
+<div class="left"></div>
+
+<div class="right"></div>
+
+<div class="seal">
+A ♥ D
+</div>
+
+</div>
+</div>
+
+<div class="hint">
+TAP / CLICK TO OPEN
+</div>
+
+<p>
+Friday • May 07, 2027 • 6:00 PM<br>
+Paradise Inn Bolgoda
+</p>
+
+</section>
+
+
+<section class="inv" id="inv">
+
+<div class="card invite-card">
+
+<div class="invite-image">
+
+<img
+src="invitation.png"
+alt="Aseka and Dineth wedding invitation"
+>
+
+<!-- CLICKABLE AREA OVER VIEW LOCATION -->
+<a
+class="map-hotspot"
+href="https://www.google.com/maps/search/?api=1&query=Paradise+Inn+Bolgoda%2C+QWP5%2B3C8%2C+67+Meegahawatte+Rd%2C+Piliyandala+10300%2C+Sri+Lanka"
+target="_blank"
+rel="noopener"
+aria-label="View location on Google Maps">
+</a>
+
+</div>
+
+</div>
+
+
+<!-- CLEAR GOOGLE MAPS BUTTON -->
+
+<div class="location">
+
+<a
+class="btn"
+href="https://www.google.com/maps/search/?api=1&query=Paradise+Inn+Bolgoda%2C+QWP5%2B3C8%2C+67+Meegahawatte+Rd%2C+Piliyandala+10300%2C+Sri+Lanka"
+target="_blank"
+rel="noopener">
+
+📍 VIEW LOCATION
+
+</a>
+
+</div>
+
+
+<!-- RSVP BOX -->
+
+<div class="rsvp">
+
+<div class="deadline">
+KINDLY RSVP BY AUGUST 10, 2026
+</div>
+
+<h2>
+We Can't Wait To<br>
+Celebrate With You!
+</h2>
+
+<div class="goldline">
+♥
+</div>
+
+<label class="label">
+Your Name
+</label>
+
+<input
+class="input"
+id="name"
+placeholder="Your full name"
+autocomplete="name"
+>
+
+<div class="label">
+Will You Attend?
+</div>
+
+<div class="attend">
+
+<button
+class="choice"
+id="yes"
+type="button">
+
+JOYFULLY ACCEPT
+
+</button>
+
+<button
+class="choice"
+id="no"
+type="button">
+
+REGRETTABLY<br>
+DECLINE
+
+</button>
+
+</div>
+
+<div class="label">
+Number Of Guests
+</div>
+
+<div class="counter">
+
+<button
+id="minus"
+type="button">
+−
+</button>
+
+<div
+class="count"
+id="count">
+1
+</div>
+
+<button
+id="plus"
+type="button">
++
+</button>
+
+</div>
+
+<button
+class="submit"
+id="submit"
+type="button">
+
+RSVP NOW ♥
+
+</button>
+
+<p class="note">
+Your RSVP is submitted securely to our wedding RSVP form.
+</p>
+
+</div>
+
+
+<button
+class="backbtn"
+id="close"
+type="button">
+
+↩ Close invitation
+
+</button>
+
+</section>
+
+</div>
+
+
+<!--
+THIS IS THE IMPORTANT PART.
+
+The guest does NOT see this Google Form.
+The response goes directly to your existing Google Form.
+-->
+
+<iframe
+name="googleFormTarget"
+id="googleFormTarget"
+style="display:none;width:0;height:0;border:0">
+</iframe>
+
+
+<form
+id="rsvpForm"
+action="https://docs.google.com/forms/d/e/1FAIpQLSeFx4IMOppN0a5KVuo6iAZTgzkfWtf88dx7V9bko78_1oE41A/formResponse"
+method="POST"
+target="googleFormTarget"
+style="display:none"
+>
+
+<input
+type="hidden"
+name="entry.1498135098"
+id="rsvpName"
+>
+
+<input
+type="hidden"
+name="entry.877086558"
+id="rsvpAttendance"
+>
+
+<input
+type="hidden"
+name="entry.2606285"
+id="rsvpGuests"
+>
+
 </form>
+
+
 <script>
-env=document.getElementById('env'),intro=document.getElementById('intro'),inv=document.getElementById('inv'),music=document.getElementById('music'),mb=document.getElementById('musicBtn');let opened=false,count=1,att=null;
-function openIt(){if(opened)return;opened=true;env.classList.add('open');setTimeout(()=>{intro.style.display='none';inv.style.display='block';mb.style.display='block';scrollTo({top:0,behavior:'smooth'})},2100);music.play().catch(()=>{})}wrap.onclick=openIt;
-mb.onclick=()=>{music.paused?(music.play(),mb.textContent='♫ Music On'):(music.pause(),mb.textContent='♫ Music Off')};
-yes.onclick=()=>{att=true;yes.classList.add('active');no.classList.remove('active')};no.onclick=()=>{att=false;no.classList.add('active');yes.classList.remove('active');count=0;document.getElementById('count').textContent=0};
-plus.onclick=()=>{if(count<20)count++;document.getElementById('count').textContent=count};minus.onclick=()=>{if(count>0)count--;document.getElementById('count').textContent=count};
-submit.onclick=()=>{
-  const guestName=document.getElementById('name').value.trim();
-  if(!guestName)return alert('Please enter your name first.');
-  if(att===null)return alert('Please select whether you will attend.');
 
-  const form=document.getElementById('rsvpForm');
-  if(!form)return alert('RSVP setup error. Please use the latest invitation file.');
+const env =
+document.getElementById('env');
 
-  document.getElementById('rsvpName').value=guestName;
-  document.getElementById('rsvpAttendance').value=att ? "Yes, I'll be there" : "Sorry, can't make it";
-  document.getElementById('rsvpGuests').value=att ? String(count) : "0";
+const intro =
+document.getElementById('intro');
 
-  submit.disabled=true;
-  submit.textContent='SUBMITTING… ♥';
-  form.submit();
+const inv =
+document.getElementById('inv');
 
-  setTimeout(()=>{
-    submit.disabled=false;
-    submit.textContent='RSVP NOW ♥';
-    alert('Thank you! Your RSVP has been submitted. 💙🤍');
-  },1800);
+const music =
+document.getElementById('music');
+
+const mb =
+document.getElementById('musicBtn');
+
+const wrap =
+document.getElementById('wrap');
+
+const yes =
+document.getElementById('yes');
+
+const no =
+document.getElementById('no');
+
+const plus =
+document.getElementById('plus');
+
+const minus =
+document.getElementById('minus');
+
+const submit =
+document.getElementById('submit');
+
+const close =
+document.getElementById('close');
+
+const nameInput =
+document.getElementById('name');
+
+const countDisplay =
+document.getElementById('count');
+
+const rsvpForm =
+document.getElementById('rsvpForm');
+
+const rsvpName =
+document.getElementById('rsvpName');
+
+const rsvpAttendance =
+document.getElementById('rsvpAttendance');
+
+const rsvpGuests =
+document.getElementById('rsvpGuests');
+
+
+let opened = false;
+
+let count = 1;
+
+let att = null;
+
+
+/* OPEN ENVELOPE */
+
+function openIt(){
+
+if(opened)return;
+
+opened=true;
+
+env.classList.add('open');
+
+setTimeout(()=>{
+
+intro.style.display='none';
+
+inv.style.display='block';
+
+mb.style.display='block';
+
+scrollTo({
+top:0,
+behavior:'smooth'
+});
+
+},2100);
+
+music.play().catch(()=>{});
+
+}
+
+wrap.onclick=openIt;
+
+
+/* MUSIC */
+
+mb.onclick=()=>{
+
+if(music.paused){
+
+music.play();
+
+mb.textContent='♫ Music On';
+
+}else{
+
+music.pause();
+
+mb.textContent='♫ Music Off';
+
+}
+
 };
-close.onclick=()=>{opened=false;inv.style.display='none';intro.style.display='flex';env.classList.remove('open');music.pause();music.currentTime=0;mb.style.display='none';scrollTo({top:0,behavior:'smooth'})};
-const c=document.getElementById('fx'),x=c.getContext('2d');let W,H,p=[],s=[];function rs(){W=c.width=innerWidth;H=c.height=innerHeight}rs();addEventListener('resize',rs);for(let i=0;i<28;i++)p.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:4+Math.random()*7,v:.3+Math.random()*.6});for(let i=0;i<40;i++)s.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,p:Math.random()*6.28});function fx(){x.clearRect(0,0,W,H);if(opened){p.forEach(a=>{a.y+=a.v;if(a.y>H)a.y=-10;x.fillStyle='rgba(55,108,191,.55)';x.beginPath();x.ellipse(a.x,a.y,a.r,a.r*.55,0,0,6.28);x.fill()});s.forEach(a=>{a.p+=.015;x.fillStyle='rgba(242,204,111,.35)';x.beginPath();x.arc(a.x,a.y,1.5+Math.sin(a.p),0,6.28);x.fill()})}requestAnimationFrame(fx)}fx();
-</script></body></html>
+
+
+/* YES */
+
+yes.onclick=()=>{
+
+att=true;
+
+yes.classList.add('active');
+
+no.classList.remove('active');
+
+if(count===0){
+
+count=1;
+
+countDisplay.textContent=1;
+
+}
+
+};
+
+
+/* NO */
+
+no.onclick=()=>{
+
+att=false;
+
+no.classList.add('active');
+
+yes.classList.remove('active');
+
+count=0;
+
+countDisplay.textContent=0;
+
+};
+
+
+/* PLUS */
+
+plus.onclick=()=>{
+
+if(att!==false && count<20){
+
+count++;
+
+}
+
+countDisplay.textContent=count;
+
+};
+
+
+/* MINUS */
+
+minus.onclick=()=>{
+
+if(count>0){
+
+count--;
+
+}
+
+countDisplay.textContent=count;
+
+};
+
+
+/* RSVP SUBMISSION */
+
+submit.onclick=()=>{
+
+const guestName =
+nameInput.value.trim();
+
+
+if(!guestName){
+
+alert(
+'Please enter your name first.'
+);
+
+return;
+
+}
+
+
+if(att===null){
+
+alert(
+'Please select whether you will attend.'
+);
+
+return;
+
+}
+
+
+if(att && count<1){
+
+alert(
+'Please select at least 1 guest.'
+);
+
+return;
+
+}
+
+
+/*
+Put the guest information
+into the hidden Google Form fields.
+*/
+
+rsvpName.value =
+guestName;
+
+rsvpAttendance.value =
+att
+? "Yes, I'll be there"
+: "Sorry, can't make it";
+
+rsvpGuests.value =
+att
+? String(count)
+: "0";
+
+
+submit.disabled=true;
+
+submit.textContent =
+'SUBMITTING… ♥';
+
+
+/*
+SEND TO GOOGLE FORM
+*/
+
+rsvpForm.submit();
+
+
+/*
+Show confirmation after
+the hidden submission.
+*/
+
+setTimeout(()=>{
+
+submit.disabled=false;
+
+submit.textContent=
+'RSVP NOW ♥';
+
+alert(
+'Thank you! Your RSVP has been submitted. 💙🤍'
+);
+
+nameInput.value='';
+
+},1500);
+
+};
+
+
+/* CLOSE INVITATION */
+
+close.onclick=()=>{
+
+opened=false;
+
+inv.style.display='none';
+
+intro.style.display='flex';
+
+env.classList.remove('open');
+
+music.pause();
+
+music.currentTime=0;
+
+mb.style.display='none';
+
+scrollTo({
+top:0,
+behavior:'smooth'
+});
+
+};
+
+
+/* BLUE PETALS + GOLD SPARKLES */
+
+const c =
+document.getElementById('fx');
+
+const x =
+c.getContext('2d');
+
+let W,H,p=[],s=[];
+
+function rs(){
+
+W=c.width=innerWidth;
+
+H=c.height=innerHeight;
+
+}
+
+rs();
+
+addEventListener(
+'resize',
+rs
+);
+
+
+for(let i=0;i<28;i++){
+
+p.push({
+
+x:Math.random()*innerWidth,
+
+y:Math.random()*innerHeight,
+
+r:4+Math.random()*7,
+
+v:.3+Math.random()*.6
+
+});
+
+}
+
+
+for(let i=0;i<40;i++){
+
+s.push({
+
+x:Math.random()*innerWidth,
+
+y:Math.random()*innerHeight,
+
+p:Math.random()*6.28
+
+});
+
+}
+
+
+function fx(){
+
+x.clearRect(
+0,
+0,
+W,
+H
+);
+
+
+if(opened){
+
+p.forEach(a=>{
+
+a.y+=a.v;
+
+if(a.y>H)
+a.y=-10;
+
+x.fillStyle=
+'rgba(55,108,191,.55)';
+
+x.beginPath();
+
+x.ellipse(
+a.x,
+a.y,
+a.r,
+a.r*.55,
+0,
+0,
+6.28
+);
+
+x.fill();
+
+});
+
+
+s.forEach(a=>{
+
+a.p+=.015;
+
+x.fillStyle=
+'rgba(242,204,111,.35)';
+
+x.beginPath();
+
+x.arc(
+a.x,
+a.y,
+1.5+Math.sin(a.p),
+0,
+6.28
+);
+
+x.fill();
+
+});
+
+}
+
+
+requestAnimationFrame(fx);
+
+}
+
+fx();
+
+</script>
+
+</body>
+</html>
